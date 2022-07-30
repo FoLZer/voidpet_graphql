@@ -456,7 +456,7 @@ mutation AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $s
 		ok
 	}
 }
-mutation AnswerGuildInvite($guildId: UUID!, $accept: Boolean!) {
+mutation AnswerGuildInvite($guildId: Uuid!, $accept: Boolean!) {
 	answerGuildInvite(guildId: $guildId, accept: $accept) {
 		user {
 			id
@@ -519,7 +519,7 @@ mutation AnswerGuildInvite($guildId: UUID!, $accept: Boolean!) {
 		}
 	}
 }
-mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Boolean!) {
+mutation AnswerTradeOffer($tradeBoxId: Uuid!, $userOfferId: Uuid!, $accept: Boolean!) {
 	answerTradeOffer(
 		tradeBoxId: $tradeBoxId
 		userOfferId: $userOfferId
@@ -666,12 +666,12 @@ mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Bool
 		}
 	}
 }
-mutation AwardTrophy($username: String!, $trophyId: UUID!, $trophyTitle: String!) {
+mutation AwardTrophy($username: String!, $trophyId: Uuid!, $trophyTitle: String!) {
 	awardTrophy(username: $username, trophyId: $trophyId, trophyTitle: $trophyTitle) {
 		ok
 	}
 }
-mutation BidOnAuctionItem($bid: Int!, $auctionItemId: UUID!) {
+mutation BidOnAuctionItem($bid: Int!, $auctionItemId: Uuid!) {
 	bidOnAuctionItem(bid: $bid, auctionItemId: $auctionItemId) {
 		user {
 			id
@@ -966,7 +966,7 @@ mutation BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!) {
 		}
 	}
 }
-mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!) {
+mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: Uuid!) {
 	buyoutAuctionItem(amount: $amount, auctionItemId: $auctionItemId) {
 		user {
 			id
@@ -1060,7 +1060,7 @@ mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!) {
 		}
 	}
 }
-mutation CancelAuctionItem($auctionItemId: UUID!) {
+mutation CancelAuctionItem($auctionItemId: Uuid!) {
 	cancelAuctionItem(auctionItemId: $auctionItemId) {
 		user {
 			id
@@ -1154,7 +1154,7 @@ mutation CancelAuctionItem($auctionItemId: UUID!) {
 		}
 	}
 }
-mutation CancelTrade($tradeBoxId: UUID!) {
+mutation CancelTrade($tradeBoxId: Uuid!) {
 	cancelTrade(tradeBoxId: $tradeBoxId) {
 		user {
 			id
@@ -1513,7 +1513,7 @@ mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
 		mood
 	}
 }
-mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int, $tradeLength: Int!) {
+mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [Uuid!]!, $voidMatter: Int, $tradeLength: Int!) {
 	createTrade(
 		description: $description
 		itemIds: $itemIds
@@ -1663,7 +1663,7 @@ mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: 
 		}
 	}
 }
-mutation CreateTradeOffer($tradeBoxId: UUID!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int) {
+mutation CreateTradeOffer($tradeBoxId: Uuid!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [Uuid!]!, $voidMatter: Int) {
 	createTradeOffer(
 		tradeBoxId: $tradeBoxId
 		itemIds: $itemIds
@@ -1937,7 +1937,7 @@ mutation DeleteMe {
 		ok
 	}
 }
-mutation DeleteTrophy($id: UUID!) {
+mutation DeleteTrophy($id: Uuid!) {
 	deleteTrophy(id: $id) {
 		ok
 	}
@@ -2050,7 +2050,7 @@ mutation DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [Str
 		__typename
 	}
 }
-mutation DrinkPotion($itemId: Int!, $petIds: [UUID!]!) {
+mutation DrinkPotion($itemId: Int!, $petIds: [Uuid!]!) {
 	drinkPotion(itemId: $itemId, petIds: $petIds) {
 		inventoryChanges {
 			item {
@@ -2218,7 +2218,7 @@ mutation DrinkPotion($itemId: Int!, $petIds: [UUID!]!) {
 		}
 	}
 }
-mutation EatFoodItem($itemId: Int!, $petIds: [UUID!]!) {
+mutation EatFoodItem($itemId: Int!, $petIds: [Uuid!]!) {
 	eatFoodItem(itemId: $itemId, petIds: $petIds) {
 		pets {
 			id
@@ -2355,7 +2355,7 @@ mutation EatFoodItem($itemId: Int!, $petIds: [UUID!]!) {
 		}
 	}
 }
-mutation EditGuild($guildId: UUID!, $name: String!, $description: String!) {
+mutation EditGuild($guildId: Uuid!, $name: String!, $description: String!) {
 	editGuild(guildId: $guildId, name: $name, description: $description) {
 		guild {
 			id
@@ -2366,7 +2366,7 @@ mutation EditGuild($guildId: UUID!, $name: String!, $description: String!) {
 		}
 	}
 }
-mutation EvolvePet($id: UUID!) {
+mutation EvolvePet($id: Uuid!) {
 	evolvePet(id: $id) {
 		pet {
 			id
@@ -3215,7 +3215,7 @@ mutation ForceCatchPet($containerId: Int!) {
 		}
 	}
 }
-mutation ForgetManyPets($petIds: [UUID!]!) {
+mutation ForgetManyPets($petIds: [Uuid!]!) {
 	forgetManyPets(petIds: $petIds) {
 		user {
 			id
@@ -3309,7 +3309,7 @@ mutation ForgetManyPets($petIds: [UUID!]!) {
 		}
 	}
 }
-mutation ForgetPet($petId: UUID!) {
+mutation ForgetPet($petId: Uuid!) {
 	forgetPet(petId: $petId) {
 		user {
 			id
@@ -4496,7 +4496,7 @@ mutation PickUpQuestItem($itemId: Int!) {
 		newProgressStrings
 	}
 }
-mutation PlayWithPet($id: UUID!, $activity: Int, $itemId: Int) {
+mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
 	playWithPet(id: $id, activity: $activity, itemId: $itemId) {
 		pet {
 			id
@@ -4834,7 +4834,7 @@ mutation QuestInteraction($questId: Int!) {
 		questProgressStrings
 	}
 }
-mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: UUID!) {
+mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: Uuid!) {
 	reportUser(
 		description: $description
 		type: $type
@@ -4844,7 +4844,7 @@ mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, 
 		ok
 	}
 }
-mutation SavePetMoves($petId: UUID!, $newMoves: [String!]!, $moves: [String!]!) {
+mutation SavePetMoves($petId: Uuid!, $newMoves: [String!]!, $moves: [String!]!) {
 	savePetMoves(petId: $petId, newMoves: $newMoves, moves: $moves) {
 		ok
 		user {
@@ -4981,7 +4981,7 @@ mutation SavePetMoves($petId: UUID!, $newMoves: [String!]!, $moves: [String!]!) 
 		}
 	}
 }
-mutation ScareAwayPet($wildPetId: UUID!) {
+mutation ScareAwayPet($wildPetId: Uuid!) {
 	scareAwayPet(wildPetId: $wildPetId) {
 		vmStolen
 		user {
@@ -5208,7 +5208,7 @@ mutation SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $q
 		}
 	}
 }
-mutation SendWildBattleSequence($sequence: [String!]!, $swapToPetId: UUID) {
+mutation SendWildBattleSequence($sequence: [String!]!, $swapToPetId: Uuid) {
 	sendWildBattleSequence(sequence: $sequence, swapToPetId: $swapToPetId) {
 		state {
 			locationId
@@ -5892,7 +5892,7 @@ mutation SendWildBattleSequence($sequence: [String!]!, $swapToPetId: UUID) {
 		}
 	}
 }
-mutation SetGuildRole($op: Int!, $userId: UUID!) {
+mutation SetGuildRole($op: Int!, $userId: Uuid!) {
 	setGuildRole(op: $op, userId: $userId) {
 		users {
 			id
@@ -5990,7 +5990,7 @@ mutation StabilizePlasma($itemId: Int!) {
 		}
 	}
 }
-mutation StartCatching($wildPetId: UUID!) {
+mutation StartCatching($wildPetId: Uuid!) {
 	startCatching(wildPetId: $wildPetId) {
 		state {
 			locationId
@@ -6124,7 +6124,7 @@ mutation StartCatching($wildPetId: UUID!) {
 		}
 	}
 }
-mutation StartGuildBattle($playerId: UUID!) {
+mutation StartGuildBattle($playerId: Uuid!) {
 	startGuildBattle(playerId: $playerId) {
 		state {
 			locationId
@@ -6440,7 +6440,7 @@ mutation StartNpcBattle($npc: Int!, $variant: Int!) {
 		}
 	}
 }
-mutation StartWildBattle($wildPetId: UUID!) {
+mutation StartWildBattle($wildPetId: Uuid!) {
 	startWildBattle(wildPetId: $wildPetId) {
 		state {
 			locationId
@@ -6598,7 +6598,7 @@ mutation StartWildBattle($wildPetId: UUID!) {
 		}
 	}
 }
-mutation SwapDeadPet($swapToPetId: UUID!) {
+mutation SwapDeadPet($swapToPetId: Uuid!) {
 	swapDeadPet(swapToPetId: $swapToPetId) {
 		state {
 			locationId
@@ -7591,7 +7591,7 @@ mutation Teleport($zoneId: Int!) {
 		}
 	}
 }
-mutation ThrowItemAtPet($itemId: Int!, $wildPetId: UUID!, $code: String) {
+mutation ThrowItemAtPet($itemId: Int!, $wildPetId: Uuid!, $code: String) {
 	throwItemAtPet(itemId: $itemId, wildPetId: $wildPetId, code: $code) {
 		petCaught {
 			xp
@@ -9082,7 +9082,7 @@ mutation UpdateMyLocation($newLocationId: Int, $direction: Int) {
 		}
 	}
 }
-mutation UpdatePet($id: UUID!, $data: String!) {
+mutation UpdatePet($id: Uuid!, $data: String!) {
 	updatePet(id: $id, data: $data) {
 		id
 		name
@@ -10598,7 +10598,7 @@ query GetNumUnreadNotifs {
 		count
 	}
 }
-query GetPet($id: UUID!) {
+query GetPet($id: Uuid!) {
 	getPet(id: $id) {
 		pet {
 			id
@@ -10725,7 +10725,7 @@ query GetPetLog($speciesId: Int!) {
 		}
 	}
 }
-query GetPetMoves($petId: UUID!) {
+query GetPetMoves($petId: Uuid!) {
 	getPetMoves(petId: $petId) {
 		moves {
 			item {
@@ -10953,7 +10953,7 @@ query GetTradeBoxes($cursor: Int, $itemType: Int, $itemId: Int, $stage: Int, $sp
 		nextCursor
 	}
 }
-query GetTradeOffers($cursor: Int, $tradeBoxId: UUID) {
+query GetTradeOffers($cursor: Int, $tradeBoxId: Uuid) {
 	getTradeOffers(cursor: $cursor, tradeBoxId: $tradeBoxId) {
 		tradeOffers {
 			voidMatter

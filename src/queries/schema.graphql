@@ -10,36 +10,36 @@ type Mutation {
 	adminGivePet(username: String!, s: String!): OkResponse!
 	adminLoginAs(username: String!): OkResponse!
 	adminSendCustomNotif(username: String!, shouldAddStrike: Boolean!, shouldHideProfile: Boolean!, msg: String!): OkResponse!
-	answerGuildInvite(guildId: UUID!, accept: Boolean!): AnswerGuildInviteResponse!
-	answerTradeOffer(tradeBoxId: UUID!, userOfferId: UUID!, accept: Boolean!): AnswerTradeOfferResponse!
-	awardTrophy(username: String!, trophyId: UUID!, trophyTitle: String!): OkResponse!
-	bidOnAuctionItem(bid: Int!, auctionItemId: UUID!): BidOnAuctionItemResponse!
+	answerGuildInvite(guildId: Uuid!, accept: Boolean!): AnswerGuildInviteResponse!
+	answerTradeOffer(tradeBoxId: Uuid!, userOfferId: Uuid!, accept: Boolean!): AnswerTradeOfferResponse!
+	awardTrophy(username: String!, trophyId: Uuid!, trophyTitle: String!): OkResponse!
+	bidOnAuctionItem(bid: Int!, auctionItemId: Uuid!): BidOnAuctionItemResponse!
 	buyGigaItem(itemId: Int!): BuyGigaItemResponse!
 	buyGigaMatterCheckoutLink(option: Int!): UsernameChangeCheckoutLinkResponse!
 	buyVendorItem(itemId: Int!, quantity: Int, npc: Int!): BuyVendorItemResponse!
-	buyoutAuctionItem(amount: Int!, auctionItemId: UUID!): BuyoutAuctionItemResponse!
-	cancelAuctionItem(auctionItemId: UUID!): CancelAuctionItemResponse!
-	cancelTrade(tradeBoxId: UUID!): CancelTradeResponse!
+	buyoutAuctionItem(amount: Int!, auctionItemId: Uuid!): BuyoutAuctionItemResponse!
+	cancelAuctionItem(auctionItemId: Uuid!): CancelAuctionItemResponse!
+	cancelTrade(tradeBoxId: Uuid!): CancelTradeResponse!
 	claimGigaMatter: ClaimGigaMatterResponse!
 	createAvatar(hairColorId: Int!, skinColorId: Int!, eyeColorId: Int!, hairId: Int, faceId: Int!, torsoId: Int!, legsId: Int!): CreateAvatarResponse!
 	createStarter(name: String!, species: Int, speciesId: Int): Pet!
-	createTrade(description: String!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [UUID!]!, voidMatter: Int, tradeLength: Int!): CreateTradeResponse!
-	createTradeOffer(tradeBoxId: UUID!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [UUID!]!, voidMatter: Int): CreateTradeOfferResponse!
+	createTrade(description: String!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [Uuid!]!, voidMatter: Int, tradeLength: Int!): CreateTradeResponse!
+	createTradeOffer(tradeBoxId: Uuid!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [Uuid!]!, voidMatter: Int): CreateTradeOfferResponse!
 	createTrophy(title: String!, description: String!, base: Int!, speciesId: Int, stage: Int, itemId: Int): OkResponse!
 	deleteGuild: DeleteGuildResponse!
 	deleteMe: OkResponse!
-	deleteTrophy(id: UUID!): OkResponse!
+	deleteTrophy(id: Uuid!): OkResponse!
 	descendCave: LocationResponse!
 	devRandomItem: OkResponse!
 	devSavePetItemPos(type: Int!, speciesId: Int!, stage: Int!, x: [String!]!, y: [String!]!, rotate: [Int!]!, scale: [Float!]!, mass: Int, stiffness: Int, damping: Int, bounce: Int, duration: Float): [ItemField!]!
-	drinkPotion(itemId: Int!, petIds: [UUID!]!): DrinkPotionResponse!
-	eatFoodItem(itemId: Int!, petIds: [UUID!]!): EatFoodItemResponse!
-	editGuild(guildId: UUID!, name: String!, description: String!): UpdateGuildResponse!
-	evolvePet(id: UUID!): EvolvePetResponse!
+	drinkPotion(itemId: Int!, petIds: [Uuid!]!): DrinkPotionResponse!
+	eatFoodItem(itemId: Int!, petIds: [Uuid!]!): EatFoodItemResponse!
+	editGuild(guildId: Uuid!, name: String!, description: String!): UpdateGuildResponse!
+	evolvePet(id: Uuid!): EvolvePetResponse!
 	fleeBattle: FleeBattleResponse!
 	forceCatchPet(containerId: Int!): ForceCatchPetResponse!
-	forgetManyPets(petIds: [UUID!]!): ForgetPetResponse!
-	forgetPet(petId: UUID!): ForgetPetResponse!
+	forgetManyPets(petIds: [Uuid!]!): ForgetPetResponse!
+	forgetPet(petId: Uuid!): ForgetPetResponse!
 	formGuild(name: String!): FormGuildResponse!
 	genDevPet: PetAndFieldsResponse!
 	gigaCheckoutLink(yearly: Boolean): GigaCheckoutLinkResponse!
@@ -53,30 +53,30 @@ type Mutation {
 	nameCaughtPet(name: String!): NameCaughtPetResponse!
 	petStorageCheckoutLink: PetStorageCheckoutLinkResponse!
 	pickUpQuestItem(itemId: Int!): PickUpQuestItemResponse!
-	playWithPet(id: UUID!, activity: Int, itemId: Int): PetPlayResponse!
+	playWithPet(id: Uuid!, activity: Int, itemId: Int): PetPlayResponse!
 	questInteraction(questId: Int!): QuestInteractionResponse!
-	reportUser(description: String!, type: Int!, badUsername: Boolean!, targetId: UUID!): OkResponse!
-	savePetMoves(petId: UUID!, newMoves: [String!]!, moves: [String!]!): SavePetMovesResponse!
-	scareAwayPet(wildPetId: UUID!): ScareAwayPetResponse!
+	reportUser(description: String!, type: Int!, badUsername: Boolean!, targetId: Uuid!): OkResponse!
+	savePetMoves(petId: Uuid!, newMoves: [String!]!, moves: [String!]!): SavePetMovesResponse!
+	scareAwayPet(wildPetId: Uuid!): ScareAwayPetResponse!
 	sellAuctionItem(startingBid: Int, buyoutPrice: Int, itemId: Int!, quantity: Int!, auctionLength: Int!): SellAuctionItemResponse!
-	sendWildBattleSequence(sequence: [String!]!, swapToPetId: UUID): WildBattleSequenceResponse!
-	setGuildRole(op: Int!, userId: UUID!): SetGuildRoleResponse!
+	sendWildBattleSequence(sequence: [String!]!, swapToPetId: Uuid): WildBattleSequenceResponse!
+	setGuildRole(op: Int!, userId: Uuid!): SetGuildRoleResponse!
 	stabilizePlasma(itemId: Int!): StabilizePlasmaResponse!
-	startCatching(wildPetId: UUID!): StartCatchingResponse!
-	startGuildBattle(playerId: UUID!): StartBattleResponse!
+	startCatching(wildPetId: Uuid!): StartCatchingResponse!
+	startGuildBattle(playerId: Uuid!): StartBattleResponse!
 	startNpcBattle(npc: Int!, variant: Int!): StartBattleResponse!
-	startWildBattle(wildPetId: UUID!): StartBattleResponse!
-	swapDeadPet(swapToPetId: UUID!): WildBattleSequenceResponse!
+	startWildBattle(wildPetId: Uuid!): StartBattleResponse!
+	swapDeadPet(swapToPetId: Uuid!): WildBattleSequenceResponse!
 	takeIceCream: TakeIceCreamResponse!
 	teleport(zoneId: Int!): LocationResponse!
-	throwItemAtPet(itemId: Int!, wildPetId: UUID!, code: String): ThrowItemAtPetResponse!
+	throwItemAtPet(itemId: Int!, wildPetId: Uuid!, code: String): ThrowItemAtPetResponse!
 	tryToFriendCatching(containerId: Int!): TryToFriendCatchingResponse!
 	turnInQuest(questId: Int!, itemId: Int): TurnInQuestResponse!
 	updateAvatar(hairColorId: Int!, skinColorId: Int!, eyeColorId: Int!, voidMatterColorId: Int, hairId: Int, backAccessoryId: Int, frontAccessoryId: Int, faceId: Int!, torsoId: Int!, legsId: Int!): UpdateAvatarResponse!
 	updateMainPets(mainPetIds: [String!]!): UpdateMainPetsResponse!
 	updateMe(input: String!): UserOrFieldErrorResponse!
 	updateMyLocation(newLocationId: Int, direction: Int): LocationResponse!
-	updatePet(id: UUID!, data: String!): Pet!
+	updatePet(id: Uuid!, data: String!): Pet!
 	updatePetItems(petId: String!, headItemId: Int, neckItemId: Int): UpdatePetItemsResponse!
 	updateRep(input: [String!]!): User!
 	usernameChangeCheckoutLink: UsernameChangeCheckoutLinkResponse!
@@ -98,14 +98,14 @@ type Query {
 	getMyLocation: ExploreResponse!
 	getNotifs(cursor: Int): GetNotifsResponse!
 	getNumUnreadNotifs: GetNumUnreadNotifsResponse!
-	getPet(id: UUID!): PetResponse!
+	getPet(id: Uuid!): PetResponse!
 	getPetItems(speciesId: Int!, stage: Int!): GetPetItemsResponse!
 	getPetLog(speciesId: Int!): GetPetLogResponse!
-	getPetMoves(petId: UUID!): GetPetMovesResponse!
+	getPetMoves(petId: Uuid!): GetPetMovesResponse!
 	getPets(cursor: Int, secondaryElement: Int, species: Int, vivid: Int, sort: Int, asc: Boolean): GetPetsResponse!
 	getStarterAvatarItems: GetStarterAvatarItemsResponse!
 	getTradeBoxes(cursor: Int, itemType: Int, itemId: Int, stage: Int, speciesId: Int, vivid: Int, username: String, minLevel: Int, mine: Boolean): GetTradeBoxesResponse!
-	getTradeOffers(cursor: Int, tradeBoxId: UUID): GetTradeOffersResponse!
+	getTradeOffers(cursor: Int, tradeBoxId: Uuid): GetTradeOffersResponse!
 	getTrophies: [Trophy!]!
 	getUser(username: String!): UserResponse!
 	getVendorItems(npc: Int!): GetVendorItemsResponse!
@@ -113,7 +113,7 @@ type Query {
 	me2: UserResponse!
 }
 
-scalar UUID
+scalar Uuid
 
 type ColorItemField  {
 	animId: String
