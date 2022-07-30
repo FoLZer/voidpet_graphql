@@ -1,5 +1,13 @@
 This crate provides graphql schema and convinient rust structs for creating graphql queries to http://api.voidpet.com/ api.
 
+## How To Install:
+This crate is not meant to be published on crates.io and only accessable through github.
+To Install add this dependency to your Cargo.toml:
+```toml
+[dependencies]
+voidpet_graphql = { git = "https://github.com/FoLZer/voidpet_graphql" }
+```
+
 ## How To use:
 Most of documentation and examples can be found at https://github.com/graphql-rust/graphql-client, this crate allows not to mess with graphql_client structs.
 
