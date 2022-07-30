@@ -1,7 +1,7 @@
 This crate provides graphql schema and convinient rust structs for creating graphql queries to http://api.voidpet.com/ api.
 
 ## How To Install:
-This crate is not meant to be published on crates.io and only accessable through github.
+This crate is not meant to be published on crates.io and only accessible through github.
 To Install add this dependency to your Cargo.toml:
 ```toml
 [dependencies]
