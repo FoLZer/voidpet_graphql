@@ -1,0 +1,668 @@
+schema {
+	query: Root
+	mutation: Mutation
+}
+
+type Root {
+	AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: Int): AcceptQuestResponse!
+	ActivateSpecialItem($itemId: Int!): ActivateSpecialItemResponse!
+	AdminGiveItems($username: String!, $amounts: [Int!]!, $itemIds: [Int!]!): OkResponse!
+	AdminGivePet($username: String!, $s: String!): OkResponse!
+	AdminLoginAs($username: String!): OkResponse!
+	AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $msg: String!): OkResponse!
+	AnswerGuildInvite($guildId: UUID!, $accept: Boolean!): AnswerGuildInviteResponse!
+	AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Boolean!): AnswerTradeOfferResponse!
+	AwardTrophy($username: String!, $trophyId: UUID!, $trophyTitle: String!): OkResponse!
+	BidOnAuctionItem($bid: Int!, $auctionItemId: UUID!): BidOnAuctionItemResponse!
+	BuyGigaItem($itemId: Int!): BuyGigaItemResponse!
+	BuyGigaMatterCheckoutLink($option: Int!): UsernameChangeCheckoutLinkResponse!
+	BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!): BuyVendorItemResponse!
+	BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!): BuyoutAuctionItemResponse!
+	CancelAuctionItem($auctionItemId: UUID!): CancelAuctionItemResponse!
+	CancelTrade($tradeBoxId: UUID!): CancelTradeResponse!
+	ClaimGigaMatter: ClaimGigaMatterResponse!
+	CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $hairId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!): CreateAvatarResponse!
+	CreateStarter($name: String!, $species: PetStarterSpecies, $speciesId: Int): Pet!
+	CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int, $tradeLength: Int!): CreateTradeResponse!
+	CreateTradeOffer($tradeBoxId: UUID!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int): CreateTradeOfferResponse!
+	CreateTrophy($title: String!, $description: String!, $base: Int!, $speciesId: Int, $stage: Int, $itemId: Int): OkResponse!
+	DeleteGuild: DeleteGuildResponse!
+	DeleteMe: OkResponse!
+	DeleteTrophy($id: UUID!): OkResponse!
+	DescendCave: LocationResponse!
+	DevRandomItem: OkResponse!
+	DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [String!]!, $y: [String!]!, $rotate: [Int!]!, $scale: [Float!]!, $mass: Int, $stiffness: Int, $damping: Int, $bounce: Int, $duration: Float): [ItemField!]!
+	DrinkPotion($itemId: Int!, $petIds: [UUID!]!): DrinkPotionResponse!
+	EatFoodItem($itemId: Int!, $petIds: [UUID!]!): EatFoodItemResponse!
+	EditGuild($guildId: UUID!, $name: String!, $description: String!): UpdateGuildResponse!
+	EvolvePet($id: UUID!): EvolvePetResponse!
+	FleeBattle: FleeBattleResponse!
+	ForceCatchPet($containerId: Int!): ForceCatchPetResponse!
+	ForgetManyPets($petIds: [UUID!]!): ForgetPetResponse!
+	ForgetPet($petId: UUID!): ForgetPetResponse!
+	FormGuild($name: String!): FormGuildResponse!
+	GenDevPet: PetAndFieldsResponse!
+	GigaCheckoutLink($yearly: Boolean): GigaCheckoutLinkResponse!
+	GigaPortalLink: GigaPortalLinkResponse!
+	GiveUpCatching($flee: Boolean): GiveUpCatchingResponse!
+	HealPets: [Pet!]!
+	InviteToGuild($friendTag: String!): OkResponse!
+	LeaveGuild: BasicUserResponse!
+	LinkClick($userId: String!, $link: String!): OkResponse!
+	Logout: Boolean!
+	NameCaughtPet($name: String!): NameCaughtPetResponse!
+	PetStorageCheckoutLink: PetStorageCheckoutLinkResponse!
+	PickUpQuestItem($itemId: Int!): PickUpQuestItemResponse!
+	PlayWithPet($id: UUID!, $activity: Int, $itemId: Int): PetPlayResponse!
+	QuestInteraction($questId: Int!): QuestInteractionResponse!
+	ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: UUID!): OkResponse!
+	SavePetMoves($petId: UUID!, $newMoves: [MoveInput!]!, $moves: [MoveInput!]!): SavePetMovesResponse!
+	ScareAwayPet($wildPetId: UUID!): ScareAwayPetResponse!
+	SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $quantity: Int!, $auctionLength: Int!): SellAuctionItemResponse!
+	SendWildBattleSequence($sequence: [SkillInput!]!, $swapToPetId: UUID): WildBattleSequenceResponse!
+	SetGuildRole($op: Int!, $userId: UUID!): SetGuildRoleResponse!
+	StabilizePlasma($itemId: Int!): StabilizePlasmaResponse!
+	StartCatching($wildPetId: UUID!): StartCatchingResponse!
+	StartGuildBattle($playerId: UUID!): StartBattleResponse!
+	StartNpcBattle($npc: Int!, $variant: Int!): StartBattleResponse!
+	StartWildBattle($wildPetId: UUID!): StartBattleResponse!
+	SwapDeadPet($swapToPetId: UUID!): WildBattleSequenceResponse!
+	TakeIceCream: TakeIceCreamResponse!
+	Teleport($zoneId: Int!): LocationResponse!
+	ThrowItemAtPet($itemId: Int!, $wildPetId: UUID!, $code: String): ThrowItemAtPetResponse!
+	TryToFriendCatching($containerId: Int!): TryToFriendCatchingResponse!
+	TurnInQuest($questId: Int!, $itemId: Int): TurnInQuestResponse!
+	UpdateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $voidMatterColorId: Int, $hairId: Int, $backAccessoryId: Int, $frontAccessoryId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!): UpdateAvatarResponse!
+	UpdateMainPets($mainPetIds: [String!]!): UpdateMainPetsResponse!
+	UpdateMe($input: UserInput!): UserOrFieldErrorResponse!
+	UpdateMyLocation($newLocationId: Int, $direction: Int): LocationResponse!
+	UpdatePet($id: UUID!, $data: PetInput!): Pet!
+	UpdatePetItems($petId: String!, $headItemId: Int, $neckItemId: Int): UpdatePetItemsResponse!
+	UpdateRep($input: [RepChangeInput!]!): User!
+	UsernameChangeCheckoutLink: UsernameChangeCheckoutLinkResponse!
+	DevAllItems: [ItemField!]!
+	DevGetPetItemMap: Int!
+	DevPets: [Pet!]!
+	GetAuctionItems($cursor: Int, $itemType: Int, $itemId: Int, $mine: Boolean, $sort: Int, $asc: Boolean): GetAuctionItemsResponse!
+	GetAvatarItems: GetAvatarItemsResponse!
+	GetBondLeaderboard: [UserPetLeaderboardResponse]!
+	GetDailyQuests($npc: Int!): GetDailyQuestsResponse!
+	GetGigaStoreItems: GetGigaStoreItemsResponse!
+	GetGuild($cursor: Int): GetGuildResponse!
+	GetGuildInvites: GetGuildInvitesResponse!
+	GetInventory: GetInventoryResponse!
+	GetLinkAnalytics: [LinkClick!]!
+	GetMyLocation: ExploreResponse!
+	GetNotifs($cursor: Int): GetNotifsResponse!
+	GetNumUnreadNotifs: GetNumUnreadNotifsResponse!
+	GetPet($id: UUID!): PetResponse!
+	GetPetItems($speciesId: Int!, $stage: Int!): GetPetItemsResponse!
+	GetPetLog($speciesId: Int!): GetPetLogResponse!
+	GetPetMoves($petId: UUID!): GetPetMovesResponse!
+	GetPets($cursor: Int, $secondaryElement: Int, $species: Int, $vivid: Int, $sort: Int, $asc: Boolean): GetPetsResponse!
+	GetStarterAvatarItems: GetStarterAvatarItemsResponse!
+	GetTradeBoxes($cursor: Int, $itemType: Int, $itemId: Int, $stage: Int, $speciesId: Int, $vivid: Int, $username: String, $minLevel: Int, $mine: Boolean): GetTradeBoxesResponse!
+	GetTradeOffers($cursor: Int, $tradeBoxId: UUID): GetTradeOffersResponse!
+	GetTrophies: [Trophy!]!
+	GetUser($username: String!): UserResponse!
+	GetVendorItems($npc: Int!): GetVendorItemsResponse!
+	ItemNameSearch($query: String!): ItemNameSearchResponse!
+	Me2: UserResponse!
+}
+
+type ColorItemField  {
+	animId: String
+	baseUrl: String
+	colors: [String!]!
+	crop: Boolean
+	description: String
+	frame: Int
+	gigaCost: Int
+	id: Int!
+	name: String!
+	rarity: Int!
+	skill: Int
+	type: Int!
+	vendorCost: Int
+}
+
+type SimpleItemField {
+	baseUrl: String
+	crop: Boolean
+	description: String
+	frame: Int
+	gigaCost: Int
+	id: Int!
+	name: String!
+	rarity: Int!
+	skill: Int
+	type: Int!
+	vendorCost: Int
+}
+
+union ItemField = SimpleItemField | ColorItemField
+
+type AuctionItem {
+	buyoutPrice: Int
+	currentBidPrice: Int
+	currentUserHasBid: Boolean!
+	hasBid: Boolean!
+	id: String!
+	item: ItemField!
+	quantity: Int!
+	sellerId: String!
+	sellerName: String!
+	timeLeft: String!
+}
+
+type BasicUserResponse {
+	user: User!
+}
+
+type BattleOpponentField {
+	activePet: BattlePetField!
+	id: String!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type BattlePetField {
+	concentrationChange: Int!
+	confidenceChange: Int!
+	critChanceChange: Int!
+	critDmgChange: Int!
+	excitementChange: Int!
+	frameSize: String!
+	healingChange: Int!
+	hp: Int!
+	id: String!
+	isVivid: Boolean!
+	items: [PetItemDisplayField!]!
+	level: Int!
+	name: String!
+	satisfactionChange: Int!
+	serenityChange: Int!
+	source: String!
+	speciesId: Int!
+	stage: Int!
+	totalHp: Int!
+	variant: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type BattlePlayerField {
+	currentMoves: [PetMoveField!]!
+	id: String!
+	movePoints: Int!
+	pets: [BattlePetField!]!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type BattleStateField {
+	id: String!
+	isGuildBattle: Boolean
+	locationId: Int!
+	opponent: BattleOpponentField!
+	winnerId: String
+	you: BattlePlayerField!
+}
+
+union LocationField = WildLocationField
+
+type BattleSummaryInfo {
+	flee: Boolean
+	items: [InventoryItem!]!
+	location: LocationField!
+	pets: [Pet!]!
+	questData: QuestLogResponse
+	questProgressStrings: [String!]!
+	user: User
+	voidMatter: Int!
+	xp: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type WildLocationField {
+	cursor: Int
+	down: Int
+	id: String!
+	layer: Int!
+	leave: Int
+	left: Int
+	maxCursor: Int
+	name: String
+	right: Int
+	seeingRed: Int
+	things: [WildPet!]!
+	up: Int
+	zone: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type WildPet {
+	catchingLoop: [CatchingSegmentField!]!
+	foodMeter: Int
+	frameSize: String!
+	hpPercent: String!
+	id: String!
+	index: Int
+	isVivid: Boolean!
+	items: [PetItemDisplayField!]!
+	level: Int!
+	name: String!
+	secondaryElement: Int
+	source: String!
+	speciesId: Int!
+	stage: Int!
+	theTotal: Int!
+	tmpCatchingStatus: Boolean
+	tmpCatchingStatusEndsAt: String
+	variant: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type CatchingSegmentField {
+	start: Int!
+	status: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type CatchingStateField {
+	caught: Boolean
+	container: ItemField
+	cost: Int!
+	forced: Boolean
+	hints: [String!]!
+	index: Int!
+	locationId: Int!
+	percent: Int!
+	wildPet: WildPet!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type DailyMoodBonusField {
+	barCount: Int!
+	streak: Int!
+}
+
+union DisplayField = SetStateDisplayField | SkillDisplayField
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type DmgField {
+	boostedElement: Int
+	crit: Int!
+	dmg: Int!
+	heal: Int
+	hp: Int!
+	miss: Boolean!
+	type: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type EffectDisplayField {
+	field: Int!
+	text: String!
+	value: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type Encounter {
+	caughtCount: Int!
+	facedCount: Int!
+	speciesId: Int!
+	stage: Int!
+	variant: Int!
+}
+
+type ErrorResponse {
+	error: String!
+}
+
+type ExploreResponse {
+	battleState: BattleStateField
+	catchingState: CatchingStateField
+	location: LocationField!
+	questData: QuestLogResponse!
+}
+
+type FieldErrorResponse {
+	error: String!
+	field: String!
+}
+
+type GuildAndOwnerField {
+	guild: GuildField!
+	owner: User!
+}
+
+type GuildField {
+	description: String!
+	id: String!
+	memberCount: Int!
+	name: String!
+	ownerId: String!
+}
+
+type InventoryItem {
+	item: ItemField!
+	quantity: Int!
+}
+
+"""
+TODO: CHECK INT/STRING TYPES
+"""
+type ItemIdAndQuantityField {
+	itemId: String!
+	itemName: String!
+	quantity: Int!
+}
+
+type LinkClick: {
+	count: Int!
+	date: String!
+	link: String!
+}
+
+type LocationResponse {
+	location: LocationField!
+}
+
+type MoveAndItemField {
+	inventoryQuantity: Int!
+	item: ItemField!
+	move: PetMoveField!
+	quantity: Int!
+}
+
+type LinkClick {
+	count: Int!
+	date: String!
+	link: String!
+}
+
+
+
+
+
+
+
+
+
+
+type AcceptQuestResponse {
+	availableQuests: [QuestField!]!
+	dailyInfo: GetDailyQuestsResponse
+	inventoryChanges: [InventoryItem]!
+	quests: [QuestField!]!
+	user: User!
+}
+type ActivateSpecialItemResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type AnswerGuildInviteResponse {
+	user: User
+}
+type AnswerTradeOfferResponse {
+	inventoryChanges: [InventoryItem!]!
+	tradeBox: TradeBox
+	user: User!
+}
+type BidOnAuctionItemResponse {
+	auctionItem: AuctionItem!
+	user: User!
+}
+type BuyGigaItemResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type BuyVendorItemResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type BuyoutAuctionItemResponse {
+	inventoryItem: InventoryItem!
+	user: User!
+}
+type CancelAuctionItemResponse {
+	inventoryItem: InventoryItem!
+	user: User!
+}
+type CancelTradeResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type ClaimGigaMatterResponse {
+	user: User!
+}
+type CreateAvatarResponse {
+	location: LocationField!
+	user: User!
+}
+type CreateTradeResponse {
+	inventoryChanges: [InventoryItem!]!
+	tradeBox: TradeBox!
+	user: User!
+}
+type CreateTradeOfferResponse {
+	inventoryChanges: [InventoryItem!]!
+	tradeOffer: TradeOffer!
+	user: User!
+}
+type DeleteGuildResponse {
+	user: User!
+}
+type DrinkPotionResponse {
+	inventoryChanges: [InventoryItem!]!
+	pets: [Pet!]!
+	user: User!
+}
+type EatFoodItemResponse {
+	pets: [Pet!]!
+	user: User!
+}
+type EvolvePetResponse {
+	inventoryChanges: [InventoryItem!]!
+	pet: Pet!
+}
+type FleeBattleResponse {
+	location: LocationField
+	state: BattleStateField
+	summary: BattleSummaryInfo
+}
+type ForceCatchPetResponse {
+	state: CatchingStateField!
+	user: User!
+}
+type ForgetPetResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type FormGuildResponse {
+	user: User!
+}
+type GigaCheckoutLinkResponse {
+	link: String!
+}
+type GigaPortalLinkResponse {
+	link: String!
+}
+type GiveUpCatchingResponse {
+	location: LocationField!
+	user: User
+}
+type NameCaughtPetResponse {
+	isMainPet: Boolean
+	location: LocationField!
+	pet: Pet!
+	questData: QuestLogResponse!
+	questProgressStrings: [String!]!
+	user: User!
+}
+type PetStorageCheckoutLinkResponse {
+	link: String!
+}
+type PickUpQuestItemResponse {
+	availableQuests: [QuestField!]!
+	item: InventoryItem!
+	newProgressStrings: [String!]!
+	quests: [QuestField!]!
+	user: User!
+}
+type QuestInteractionResponse {
+	availableQuests: [QuestField!]!
+	questProgressStrings: [String!]!
+	quests: [QuestField!]!
+	user: User!
+}
+type SavePetMovesResponse {
+	inventoryChanges: [InventoryItem!]!
+	moves: [MoveAndItemField!]!
+	ok: Boolean!
+	user: User!
+}
+type ScareAwayPetResponse {
+	location: LocationField!
+	user: User
+	vmStolen: Int
+}
+type SellAuctionItemResponse {
+	auctionItem: AuctionItem!
+	user: User!
+}
+type SetGuildRoleResponse {
+	users: [User!]!
+}
+type StabilizePlasmaResponse {
+	items: [InventoryItem!]!
+}
+type StartCatchingResponse {
+	location: LocationField!
+	state: CatchingStateField!
+}
+type TakeIceCreamResponse {
+	battleResponse: StartBattleResponse
+	item: InventoryItem
+	user: User
+}
+type ThrowItemAtPetResponse {
+	inventoryChanges: [InventoryItem!]!
+	petCaught: PetCaughtResponse
+	petChange: PetChangeResponse
+	user: User!
+}
+type TryToFriendCatchingResponse {
+	location: LocationField
+	state: CatchingStateField!
+	user: User!
+}
+type TurnInQuestResponse {
+	availableQuests: [QuestField!]!
+	dailyInfo: GetDailyQuestsResponse
+	inventoryChanges: [InventoryItem!]!
+	pets: [Pet!]!
+	quests: [QuestField!]!
+	user: User!
+}
+type UpdateAvatarResponse {
+	inventoryChanges: [InventoryItem!]!
+	user: User!
+}
+type UpdateMainPetsResponse {
+	mainPets: [Pet!]!
+}
+type UpdatePetItemsResponse {
+	inventoryChanges: [InventoryItem!]!
+	pet: Pet!
+	user: User
+}
+type UsernameChangeCheckoutLinkResponse {
+	link: String!
+}
+type GetAuctionItemsResponse {
+	auctionItems: [AuctionItem!]!
+	nextCursor: Int
+}
+type GetAvatarItemsResponse {
+	items: [ItemField!]!
+	itemsForSale: [ItemField!]!
+}
+type GetDailyQuestsResponse {
+	dailies: [QuestField!]!
+	id: String!
+}
+type GetGigaStoreItemsResponse {
+	items: [ItemField!]!
+}
+type GetGuildResponse {
+	guild: GuildField!
+	members: [User!]!
+	nextCursor: Int
+}
+type GetGuildInvitesResponse {
+	guilds: [GuildAndOwnerField!]!
+}
+type GetInventoryResponse {
+	items: [InventoryItem!]!
+}
+type GetNotifsResponse {
+	nextCursor: Int
+	notifCount: GetNumUnreadNotifsResponse!
+	notifs: [Notif!]!
+}
+type GetNumUnreadNotifsResponse {
+	count: Int!
+	id: String!
+}
+type GetPetItemsResponse {
+	petItems: [PetItemDisplayField!]!
+	petItemsForSale: [PetItemDisplayField!]!
+}
+type GetPetLogResponse {
+	encounters: [Encounter!]!
+}
+type GetPetMovesResponse {
+	moves: [MoveAndItemField!]!
+}
+type GetPetsResponse {
+	nextCursor: Int
+	pets: [Pet!]!
+}
+type GetStarterAvatarItemsResponse {
+	starterItems: [ItemField!]!
+}
+type GetTradeBoxesResponse {
+	nextCursor: Int
+	tradeBoxes: [TradeBox!]!
+}
+type GetTradeOffersResponse {
+	nextCursor: Int
+	tradeOffers: [TradeOffer!]!
+}
+type GetVendorItemsResponse {
+	items: [ItemField!]!
+}
+type ItemNameSearchResponse {
+	items: [ItemField!]!
+}

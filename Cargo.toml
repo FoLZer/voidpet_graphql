@@ -1,0 +1,12 @@
+[package]
+name = "voidpet_graphql"
+version = "0.1.0"
+edition = "2021"
+authors = ["FoLZer"]
+
+
+[dependencies]
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+reqwest = { version = "*", features = ["json"] }
+cynic = { version = "1.0.0" }
