@@ -1,112 +1,115 @@
 schema {
-	query: Root
+	query: Query
 	mutation: Mutation
 }
 
-type Root {
-	AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: Int): AcceptQuestResponse!
-	ActivateSpecialItem($itemId: Int!): ActivateSpecialItemResponse!
-	AdminGiveItems($username: String!, $amounts: [Int!]!, $itemIds: [Int!]!): OkResponse!
-	AdminGivePet($username: String!, $s: String!): OkResponse!
-	AdminLoginAs($username: String!): OkResponse!
-	AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $msg: String!): OkResponse!
-	AnswerGuildInvite($guildId: UUID!, $accept: Boolean!): AnswerGuildInviteResponse!
-	AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Boolean!): AnswerTradeOfferResponse!
-	AwardTrophy($username: String!, $trophyId: UUID!, $trophyTitle: String!): OkResponse!
-	BidOnAuctionItem($bid: Int!, $auctionItemId: UUID!): BidOnAuctionItemResponse!
-	BuyGigaItem($itemId: Int!): BuyGigaItemResponse!
-	BuyGigaMatterCheckoutLink($option: Int!): UsernameChangeCheckoutLinkResponse!
-	BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!): BuyVendorItemResponse!
-	BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!): BuyoutAuctionItemResponse!
-	CancelAuctionItem($auctionItemId: UUID!): CancelAuctionItemResponse!
-	CancelTrade($tradeBoxId: UUID!): CancelTradeResponse!
+type Mutation {
+	AcceptQuest(questId: Int!, itemId: Int, name: String, difficulty: Int): AcceptQuestResponse!
+	ActivateSpecialItem(itemId: Int!): ActivateSpecialItemResponse!
+	AdminGiveItems(username: String!, amounts: [Int!]!, itemIds: [Int!]!): OkResponse!
+	AdminGivePet(username: String!, s: String!): OkResponse!
+	AdminLoginAs(username: String!): OkResponse!
+	AdminSendCustomNotif(username: String!, shouldAddStrike: Boolean!, shouldHideProfile: Boolean!, msg: String!): OkResponse!
+	AnswerGuildInvite(guildId: UUID!, accept: Boolean!): AnswerGuildInviteResponse!
+	AnswerTradeOffer(tradeBoxId: UUID!, userOfferId: UUID!, accept: Boolean!): AnswerTradeOfferResponse!
+	AwardTrophy(username: String!, trophyId: UUID!, trophyTitle: String!): OkResponse!
+	BidOnAuctionItem(bid: Int!, auctionItemId: UUID!): BidOnAuctionItemResponse!
+	BuyGigaItem(itemId: Int!): BuyGigaItemResponse!
+	BuyGigaMatterCheckoutLink(option: Int!): UsernameChangeCheckoutLinkResponse!
+	BuyVendorItem(itemId: Int!, quantity: Int, npc: Int!): BuyVendorItemResponse!
+	BuyoutAuctionItem(amount: Int!, auctionItemId: UUID!): BuyoutAuctionItemResponse!
+	CancelAuctionItem(auctionItemId: UUID!): CancelAuctionItemResponse!
+	CancelTrade(tradeBoxId: UUID!): CancelTradeResponse!
 	ClaimGigaMatter: ClaimGigaMatterResponse!
-	CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $hairId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!): CreateAvatarResponse!
-	CreateStarter($name: String!, $species: PetStarterSpecies, $speciesId: Int): Pet!
-	CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int, $tradeLength: Int!): CreateTradeResponse!
-	CreateTradeOffer($tradeBoxId: UUID!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int): CreateTradeOfferResponse!
-	CreateTrophy($title: String!, $description: String!, $base: Int!, $speciesId: Int, $stage: Int, $itemId: Int): OkResponse!
+	CreateAvatar(hairColorId: Int!, skinColorId: Int!, eyeColorId: Int!, hairId: Int, faceId: Int!, torsoId: Int!, legsId: Int!): CreateAvatarResponse!
+	CreateStarter(name: String!, species: PetStarterSpecies, speciesId: Int): Pet!
+	CreateTrade(description: String!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [UUID!]!, voidMatter: Int, tradeLength: Int!): CreateTradeResponse!
+	CreateTradeOffer(tradeBoxId: UUID!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [UUID!]!, voidMatter: Int): CreateTradeOfferResponse!
+	CreateTrophy(title: String!, description: String!, base: Int!, speciesId: Int, stage: Int, itemId: Int): OkResponse!
 	DeleteGuild: DeleteGuildResponse!
 	DeleteMe: OkResponse!
-	DeleteTrophy($id: UUID!): OkResponse!
+	DeleteTrophy(id: UUID!): OkResponse!
 	DescendCave: LocationResponse!
 	DevRandomItem: OkResponse!
-	DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [String!]!, $y: [String!]!, $rotate: [Int!]!, $scale: [Float!]!, $mass: Int, $stiffness: Int, $damping: Int, $bounce: Int, $duration: Float): [ItemField!]!
-	DrinkPotion($itemId: Int!, $petIds: [UUID!]!): DrinkPotionResponse!
-	EatFoodItem($itemId: Int!, $petIds: [UUID!]!): EatFoodItemResponse!
-	EditGuild($guildId: UUID!, $name: String!, $description: String!): UpdateGuildResponse!
-	EvolvePet($id: UUID!): EvolvePetResponse!
+	DevSavePetItemPos(type: Int!, speciesId: Int!, stage: Int!, x: [String!]!, y: [String!]!, rotate: [Int!]!, scale: [Float!]!, mass: Int, stiffness: Int, damping: Int, bounce: Int, duration: Float): [ItemField!]!
+	DrinkPotion(itemId: Int!, petIds: [UUID!]!): DrinkPotionResponse!
+	EatFoodItem(itemId: Int!, petIds: [UUID!]!): EatFoodItemResponse!
+	EditGuild(guildId: UUID!, name: String!, description: String!): UpdateGuildResponse!
+	EvolvePet(id: UUID!): EvolvePetResponse!
 	FleeBattle: FleeBattleResponse!
-	ForceCatchPet($containerId: Int!): ForceCatchPetResponse!
-	ForgetManyPets($petIds: [UUID!]!): ForgetPetResponse!
-	ForgetPet($petId: UUID!): ForgetPetResponse!
-	FormGuild($name: String!): FormGuildResponse!
+	ForceCatchPet(containerId: Int!): ForceCatchPetResponse!
+	ForgetManyPets(petIds: [UUID!]!): ForgetPetResponse!
+	ForgetPet(petId: UUID!): ForgetPetResponse!
+	FormGuild(name: String!): FormGuildResponse!
 	GenDevPet: PetAndFieldsResponse!
-	GigaCheckoutLink($yearly: Boolean): GigaCheckoutLinkResponse!
+	GigaCheckoutLink(yearly: Boolean): GigaCheckoutLinkResponse!
 	GigaPortalLink: GigaPortalLinkResponse!
-	GiveUpCatching($flee: Boolean): GiveUpCatchingResponse!
+	GiveUpCatching(flee: Boolean): GiveUpCatchingResponse!
 	HealPets: [Pet!]!
-	InviteToGuild($friendTag: String!): OkResponse!
+	InviteToGuild(friendTag: String!): OkResponse!
 	LeaveGuild: BasicUserResponse!
-	LinkClick($userId: String!, $link: String!): OkResponse!
+	LinkClick(userId: String!, link: String!): OkResponse!
 	Logout: Boolean!
-	NameCaughtPet($name: String!): NameCaughtPetResponse!
+	NameCaughtPet(name: String!): NameCaughtPetResponse!
 	PetStorageCheckoutLink: PetStorageCheckoutLinkResponse!
-	PickUpQuestItem($itemId: Int!): PickUpQuestItemResponse!
-	PlayWithPet($id: UUID!, $activity: Int, $itemId: Int): PetPlayResponse!
-	QuestInteraction($questId: Int!): QuestInteractionResponse!
-	ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: UUID!): OkResponse!
-	SavePetMoves($petId: UUID!, $newMoves: [MoveInput!]!, $moves: [MoveInput!]!): SavePetMovesResponse!
-	ScareAwayPet($wildPetId: UUID!): ScareAwayPetResponse!
-	SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $quantity: Int!, $auctionLength: Int!): SellAuctionItemResponse!
-	SendWildBattleSequence($sequence: [SkillInput!]!, $swapToPetId: UUID): WildBattleSequenceResponse!
-	SetGuildRole($op: Int!, $userId: UUID!): SetGuildRoleResponse!
-	StabilizePlasma($itemId: Int!): StabilizePlasmaResponse!
-	StartCatching($wildPetId: UUID!): StartCatchingResponse!
-	StartGuildBattle($playerId: UUID!): StartBattleResponse!
-	StartNpcBattle($npc: Int!, $variant: Int!): StartBattleResponse!
-	StartWildBattle($wildPetId: UUID!): StartBattleResponse!
-	SwapDeadPet($swapToPetId: UUID!): WildBattleSequenceResponse!
+	PickUpQuestItem(itemId: Int!): PickUpQuestItemResponse!
+	PlayWithPet(id: UUID!, activity: Int, itemId: Int): PetPlayResponse!
+	QuestInteraction(questId: Int!): QuestInteractionResponse!
+	ReportUser(description: String!, type: Int!, badUsername: Boolean!, targetId: UUID!): OkResponse!
+	SavePetMoves(petId: UUID!, newMoves: [String!]!, moves: [String!]!): SavePetMovesResponse!
+	ScareAwayPet(wildPetId: UUID!): ScareAwayPetResponse!
+	SellAuctionItem(startingBid: Int, buyoutPrice: Int, itemId: Int!, quantity: Int!, auctionLength: Int!): SellAuctionItemResponse!
+	SendWildBattleSequence(sequence: [String!]!, swapToPetId: UUID): WildBattleSequenceResponse!
+	SetGuildRole(op: Int!, userId: UUID!): SetGuildRoleResponse!
+	StabilizePlasma(itemId: Int!): StabilizePlasmaResponse!
+	StartCatching(wildPetId: UUID!): StartCatchingResponse!
+	StartGuildBattle(playerId: UUID!): StartBattleResponse!
+	StartNpcBattle(npc: Int!, variant: Int!): StartBattleResponse!
+	StartWildBattle(wildPetId: UUID!): StartBattleResponse!
+	SwapDeadPet(swapToPetId: UUID!): WildBattleSequenceResponse!
 	TakeIceCream: TakeIceCreamResponse!
-	Teleport($zoneId: Int!): LocationResponse!
-	ThrowItemAtPet($itemId: Int!, $wildPetId: UUID!, $code: String): ThrowItemAtPetResponse!
-	TryToFriendCatching($containerId: Int!): TryToFriendCatchingResponse!
-	TurnInQuest($questId: Int!, $itemId: Int): TurnInQuestResponse!
-	UpdateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $voidMatterColorId: Int, $hairId: Int, $backAccessoryId: Int, $frontAccessoryId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!): UpdateAvatarResponse!
-	UpdateMainPets($mainPetIds: [String!]!): UpdateMainPetsResponse!
-	UpdateMe($input: UserInput!): UserOrFieldErrorResponse!
-	UpdateMyLocation($newLocationId: Int, $direction: Int): LocationResponse!
-	UpdatePet($id: UUID!, $data: PetInput!): Pet!
-	UpdatePetItems($petId: String!, $headItemId: Int, $neckItemId: Int): UpdatePetItemsResponse!
-	UpdateRep($input: [RepChangeInput!]!): User!
+	Teleport(zoneId: Int!): LocationResponse!
+	ThrowItemAtPet(itemId: Int!, wildPetId: UUID!, code: String): ThrowItemAtPetResponse!
+	TryToFriendCatching(containerId: Int!): TryToFriendCatchingResponse!
+	TurnInQuest(questId: Int!, itemId: Int): TurnInQuestResponse!
+	UpdateAvatar(hairColorId: Int!, skinColorId: Int!, eyeColorId: Int!, voidMatterColorId: Int, hairId: Int, backAccessoryId: Int, frontAccessoryId: Int, faceId: Int!, torsoId: Int!, legsId: Int!): UpdateAvatarResponse!
+	UpdateMainPets(mainPetIds: [String!]!): UpdateMainPetsResponse!
+	UpdateMe(input: String!): UserOrFieldErrorResponse!
+	UpdateMyLocation(newLocationId: Int, direction: Int): LocationResponse!
+	UpdatePet(id: UUID!, data: String!): Pet!
+	UpdatePetItems(petId: String!, headItemId: Int, neckItemId: Int): UpdatePetItemsResponse!
+	UpdateRep(input: [String!]!): User!
 	UsernameChangeCheckoutLink: UsernameChangeCheckoutLinkResponse!
+}
+
+type Query {
 	DevAllItems: [ItemField!]!
 	DevGetPetItemMap: Int!
 	DevPets: [Pet!]!
-	GetAuctionItems($cursor: Int, $itemType: Int, $itemId: Int, $mine: Boolean, $sort: Int, $asc: Boolean): GetAuctionItemsResponse!
+	GetAuctionItems(cursor: Int, itemType: Int, itemId: Int, mine: Boolean, sort: Int, asc: Boolean): GetAuctionItemsResponse!
 	GetAvatarItems: GetAvatarItemsResponse!
 	GetBondLeaderboard: [UserPetLeaderboardResponse]!
-	GetDailyQuests($npc: Int!): GetDailyQuestsResponse!
+	GetDailyQuests(npc: Int!): GetDailyQuestsResponse!
 	GetGigaStoreItems: GetGigaStoreItemsResponse!
-	GetGuild($cursor: Int): GetGuildResponse!
+	GetGuild(cursor: Int): GetGuildResponse!
 	GetGuildInvites: GetGuildInvitesResponse!
 	GetInventory: GetInventoryResponse!
 	GetLinkAnalytics: [LinkClick!]!
 	GetMyLocation: ExploreResponse!
-	GetNotifs($cursor: Int): GetNotifsResponse!
+	GetNotifs(cursor: Int): GetNotifsResponse!
 	GetNumUnreadNotifs: GetNumUnreadNotifsResponse!
-	GetPet($id: UUID!): PetResponse!
-	GetPetItems($speciesId: Int!, $stage: Int!): GetPetItemsResponse!
-	GetPetLog($speciesId: Int!): GetPetLogResponse!
-	GetPetMoves($petId: UUID!): GetPetMovesResponse!
-	GetPets($cursor: Int, $secondaryElement: Int, $species: Int, $vivid: Int, $sort: Int, $asc: Boolean): GetPetsResponse!
+	GetPet(id: UUID!): PetResponse!
+	GetPetItems(speciesId: Int!, stage: Int!): GetPetItemsResponse!
+	GetPetLog(speciesId: Int!): GetPetLogResponse!
+	GetPetMoves(petId: UUID!): GetPetMovesResponse!
+	GetPets(cursor: Int, secondaryElement: Int, species: Int, vivid: Int, sort: Int, asc: Boolean): GetPetsResponse!
 	GetStarterAvatarItems: GetStarterAvatarItemsResponse!
-	GetTradeBoxes($cursor: Int, $itemType: Int, $itemId: Int, $stage: Int, $speciesId: Int, $vivid: Int, $username: String, $minLevel: Int, $mine: Boolean): GetTradeBoxesResponse!
-	GetTradeOffers($cursor: Int, $tradeBoxId: UUID): GetTradeOffersResponse!
+	GetTradeBoxes(cursor: Int, itemType: Int, itemId: Int, stage: Int, speciesId: Int, vivid: Int, username: String, minLevel: Int, mine: Boolean): GetTradeBoxesResponse!
+	GetTradeOffers(cursor: Int, tradeBoxId: UUID): GetTradeOffersResponse!
 	GetTrophies: [Trophy!]!
-	GetUser($username: String!): UserResponse!
-	GetVendorItems($npc: Int!): GetVendorItemsResponse!
-	ItemNameSearch($query: String!): ItemNameSearchResponse!
+	GetUser(username: String!): UserResponse!
+	GetVendorItems(npc: Int!): GetVendorItemsResponse!
+	ItemNameSearch(query: String!): ItemNameSearchResponse!
 	Me2: UserResponse!
 }
 
@@ -378,7 +381,7 @@ type ItemIdAndQuantityField {
 	quantity: Int!
 }
 
-type LinkClick: {
+type LinkClick {
 	count: Int!
 	date: String!
 	link: String!
@@ -401,10 +404,275 @@ type LinkClick {
 	link: String!
 }
 
+type SetStateDisplayField {
+	state: BattleStateField!
+}
 
+type SkillDisplayField {
+	anims: [SkillAnimationField!]!
+	playerDisplays: [PlayerDisplayField!]!
+	text: String
+}
 
+type SkillAnimationField {
+	animId: String
+	delay: Int
+	playerId: String!
+}
 
+type PlayerDisplayField {
+	concentrationChange: Int!
+	confidenceChange: Int!
+	critChanceChange: Int!
+	critDmgChange: Int!
+	dmgs: [DmgField!]!
+	effects: [EffectDisplayField!]!
+	excitementChange: Int!
+	healingChange: Int!
+	playerId: String!
+	satisfactionChange: Int!
+	serenityChange: Int!
+}
 
+type OkResponse {
+	ok: Boolean
+}
+
+type Pet {
+	adrenaline: Int
+	birthday: String!
+	bondPoints: Int!
+	bonusHints: [String!]!
+	changeNameToken: String!
+	chemistry: Int!
+	containerId: Int
+	dopamine: Int!
+	dopamineDt: Int
+	endorphins: Int
+	favorite: Boolean
+	frameSize: String!
+	gender: Int!
+	generation: Int!
+	height: Int!
+	id: String!
+	idVivid: Boolean!
+	items: [PetItemDisplayField!]!
+	leptin: Int!
+	leptinDt: Int
+	level: Int!
+	metAt: String!
+	mood: String!
+	moodIcon: String!
+	name: String!
+	noradrenaline: Int
+	orientation: Int!
+	originalMetAt: String
+	originalOwnerName: String
+	outlook: Int!
+	ownerId: String
+	oxytocin: Int!
+	oxytocinDt: Int
+	preference: Int!
+	serotonin: Int
+	speciesId: Int!
+	stage: Int!
+	stats: Stats!
+	theTotal: Int!
+	variant: Int!
+	weight: Int!
+	xp: Int!
+	xpCap: Int!
+}
+
+type Stats {
+	concentration: Int!
+	confidence: Int!
+	excitement: Int!
+	hp: Int!
+	maxConcentraion: Int!
+	maxConfidence: Int!
+	maxExcitement: Int!
+	maxSatisfaction: Int!
+	maxSerenity: Int!
+	maxWillpower: Int!
+	moodBoostBattleStat: Int
+	moodHint: String
+	satisfaction: Int!
+	serenity: Int!
+	totalHp: Int!
+	willpower: Int!
+}
+
+type User {
+	backAccessoryId: Int
+	bio: String
+	changeUsernameToken: String!
+	discordAvatarUrl: String
+	displayName: String
+	eyeColorId: Int
+	eyeColors: [String!]
+	faceId: Int
+	friendTag: String!
+	frontAccessoryId: Int
+	giga: Boolean!
+	gigaMatter: Int!
+	gigaMatterClaimedAt: String
+	guildId: String
+	guildRole: String
+	hairColorId: Int
+	hairColors: [String!]
+	hairId: Int
+	id: String!
+	instagramUsername: String
+	isBanned: Boolean
+	legsId: Int
+	level: Int!
+	linkAccess: Boolean
+	links: [ProfileLink!]
+	merchPurchased: Boolean
+	numPets: Int!
+	petLimit: Int!
+	profileBgId: Int
+	questProgress: [QuestProgressField!]!
+	reputation: [RepField!]!
+	signupNumber: Int!
+	skinColorId: Int
+	skinColors: [String!]
+	tiktokUsername: String
+	torsoId: Int
+	twitterUsername: String
+	username: String
+	voidMatter: Int!
+	voidMatterColorId: Int
+	voidMatterColors: [String!]
+	xp: Int!
+	xpCap: Int!
+	youtubeChannelUrl: String
+}
+
+type ProfileLink {
+	icon: String
+	link: String!
+	subtitle: String
+	title: String!
+}
+
+type QuestProgressField {
+	complete: Boolean
+	percentComplete: Int
+	progressString: String
+	questId: Int!
+}
+
+type RepField {
+	faction: String!
+	value: Int!
+}
+
+type Trophy {
+	base: Int!
+	description: String!
+	id: String!
+	item: ItemField
+	speciesId: Int
+	stage: Int
+	title: String!
+	winners: [String]
+}
+
+type PetItemDisplayField {
+	animId: Int
+	baseUrl: String
+	crop: Boolean
+	description: String
+	duration: Int
+	frame: Int
+	gigaCost: Int
+	id: String!
+	name: String!
+	rarity: Int!
+	rotate: [Int!]!
+	scale: [Int!]!
+	skill: Int
+	type: Int!
+	vendorCost: Int
+	x: [Int!]!
+	y: [Int!]!	
+}
+
+type PetMoveField {
+	animIds: [Int!]!
+	boosted: Boolean
+	cost: Int!
+	description: String!
+	dmgIndication: Int
+	element: Int
+	name: String!
+	skill: Int!
+}
+
+type QuestField {
+	complete: Boolean
+	dailyStartedAt: String
+	description: String!
+	id: String!
+	inventoryRequirementList: [ItemIdAndQuantityField!]
+	itemsForAccepting: [InventoryItem!]!
+	name: String!
+	percentComplete: String
+	pickOneAccepting: Int
+	pickOneReward: Int
+	progressString: String!
+	questGiver: String!
+	rewards: [InventoryItem!]!
+	startingProgressString: String!
+	voidMatterReward: Int
+	xpReward: Int!
+}
+
+type TradeBox {
+	description: String!
+	hasOffer: Boolean
+	id: String!
+	items: [InventoryItem!]!
+	numOffers: Int!
+	petPreviews: [PetPreviewField!]
+	timeLeft: String!
+	traderId: String!
+	traderName: String!
+	voidMatter: Int
+}
+
+type PetPreviewField {
+	containerId: Int
+	id: String!
+	level: Int!
+	speciesId: Int!
+	stage: Int!
+	vivid: Boolean!
+}
+
+type TradeOffer {
+	items: [InventoryItem!]!
+	petPreviews: [PetPreviewField!]
+	tradeBox: TradeBox
+	tradeBoxId: String!
+	userId: String!
+	username: String!
+	voidMatter: Int
+}
+
+type Notif {
+	createdAt: String!
+	guild: GuildField
+	id: String!
+	item: ItemField
+	items: [InventoryItem!]
+	n: Int
+	petPreviews: [PetPreviewField!]
+	str: String
+	type: Int!
+}
 
 
 
@@ -665,4 +933,67 @@ type GetVendorItemsResponse {
 }
 type ItemNameSearchResponse {
 	items: [ItemField!]!
+}
+type UpdateGuildResponse {
+	guild: GuildField!
+}
+type PetAndFieldsResponse {
+	fields: String!
+	pet: Pet!
+}
+type PetPlayResponse {
+	bondPoints: Int
+	dailyBonus: DailyMoodBonusField
+	hint: String
+	inventoryChanges: [InventoryItem!]
+	moodThresholdReached: Boolean
+	pet: Pet!
+}
+type WildBattleSequenceResponse {
+	display: [DisplayField!]!
+	state: BattleStateField!
+	summary: BattleSummaryInfo
+}
+type StartBattleResponse {
+	location: LocationField!
+	state: BattleStateField!
+}
+
+union UserOrFieldErrorResponse = FieldErrorResponse | User
+
+type UserPetLeaderboardResponse {
+	pet: Pet!
+	user: User!
+}
+
+type PetResponse {
+	pet: Pet!
+}
+
+type UserResponse {
+	mainPets: [Pet!]!
+	trophies: [Trophy!]!
+	user: User!
+}
+
+type QuestLogResponse {
+	availableQuests: [QuestField!]!
+	quests: [QuestField!]!
+	user: User!
+}
+
+type PetCaughtResponse {
+	isMainPet: Boolean
+	location: LocationField!
+	pet: Pet!
+	pets: [Pet!]!
+	questData: QuestLogResponse!
+	questProgressStrings: [String!]!
+	voidMatter: Int!
+	xp: Int!
+}
+
+type PetChangeResponse {
+	flee: Boolean
+	location: LocationField!
 }
