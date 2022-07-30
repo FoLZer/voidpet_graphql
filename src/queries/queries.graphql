@@ -1,0 +1,11505 @@
+mutation AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: Int) {
+	acceptQuest(
+		questId: $questId
+		itemId: $itemId
+		name: $name
+		difficulty: $difficulty
+	) {
+		quests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		availableQuests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		dailyInfo {
+			id
+			dailies {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation ActivateSpecialItem($itemId: Int!) {
+	activateSpecialItem(itemId: $itemId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation AdminGiveItems($username: String!, $amounts: [Int!]!, $itemIds: [Int!]!) {
+	adminGiveItems(username: $username, amounts: $amounts, itemIds: $itemIds) {
+		ok
+	}
+}
+mutation AdminGivePet($username: String!, $s: String!) {
+	adminGivePet(username: $username, s: $s) {
+		ok
+	}
+}
+mutation AdminLoginAs($username: String!) {
+	adminLoginAs(username: $username) {
+		ok
+	}
+}
+mutation AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $msg: String!) {
+	adminSendCustomNotif(
+		username: $username
+		shouldAddStrike: $shouldAddStrike
+		shouldHideProfile: $shouldHideProfile
+		msg: $msg
+	) {
+		ok
+	}
+}
+mutation AnswerGuildInvite($guildId: UUID!, $accept: Boolean!) {
+	answerGuildInvite(guildId: $guildId, accept: $accept) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Boolean!) {
+	answerTradeOffer(
+		tradeBoxId: $tradeBoxId
+		userOfferId: $userOfferId
+		accept: $accept
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		tradeBox {
+			id
+			voidMatter
+			traderId
+			traderName
+			description
+			hasOffer
+			numOffers
+			timeLeft
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation AwardTrophy($username: String!, $trophyId: UUID!, $trophyTitle: String!) {
+	awardTrophy(username: $username, trophyId: $trophyId, trophyTitle: $trophyTitle) {
+		ok
+	}
+}
+mutation BidOnAuctionItem($bid: Int!, $auctionItemId: UUID!) {
+	bidOnAuctionItem(bid: $bid, auctionItemId: $auctionItemId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		auctionItem {
+			id
+			timeLeft
+			currentBidPrice
+			buyoutPrice
+			sellerId
+			sellerName
+			quantity
+			hasBid
+			currentUserHasBid
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+		}
+	}
+}
+mutation BuyGigaItem($itemId: Int!) {
+	buyGigaItem(itemId: $itemId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation BuyGigaMatterCheckoutLink($option: Int!) {
+	buyGigaMatterCheckoutLink(option: $option) {
+		link
+	}
+}
+mutation BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!) {
+	buyVendorItem(itemId: $itemId, quantity: $quantity, npc: $npc) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!) {
+	buyoutAuctionItem(amount: $amount, auctionItemId: $auctionItemId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryItem {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation CancelAuctionItem($auctionItemId: UUID!) {
+	cancelAuctionItem(auctionItemId: $auctionItemId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryItem {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation CancelTrade($tradeBoxId: UUID!) {
+	cancelTrade(tradeBoxId: $tradeBoxId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation ClaimGigaMatter {
+	claimGigaMatter {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $hairId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!) {
+	createAvatar(
+		hairColorId: $hairColorId
+		skinColorId: $skinColorId
+		eyeColorId: $eyeColorId
+		hairId: $hairId
+		faceId: $faceId
+		torsoId: $torsoId
+		legsId: $legsId
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
+	createStarter(name: $name, species: $species, speciesId: $speciesId) {
+		id
+		name
+		level
+		stage
+		bondPoints
+		speciesId
+		ownerId
+		leptinDt
+		leptin
+		dopamineDt
+		dopamine
+		oxytocinDt
+		oxytocin
+		birthday
+		favorite
+		changeNameToken
+		metAt
+		originalMetAt
+		originalOwnerName
+		xp
+		items {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		xpCap
+		generation
+		stats {
+			moodHint
+			moodBoostBattleStat
+			hp
+			totalHp
+			confidence
+			concentration
+			satisfaction
+			serenity
+			excitement
+			willpower
+			maxConfidence
+			maxConcentration
+			maxSatisfaction
+			maxSerenity
+			maxExcitement
+			maxWillpower
+		}
+		weight
+		height
+		containerId
+		gender
+		orientation
+		chemistry
+		bonusHints
+		isVivid
+		variant
+		outlook
+		frameSize
+		theTotal
+		preference
+		moodIcon
+		mood
+	}
+}
+mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int, $tradeLength: Int!) {
+	createTrade(
+		description: $description
+		itemIds: $itemIds
+		itemQuantities: $itemQuantities
+		petIds: $petIds
+		voidMatter: $voidMatter
+		tradeLength: $tradeLength
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		tradeBox {
+			id
+			voidMatter
+			traderId
+			traderName
+			description
+			hasOffer
+			numOffers
+			timeLeft
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation CreateTradeOffer($tradeBoxId: UUID!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int) {
+	createTradeOffer(
+		tradeBoxId: $tradeBoxId
+		itemIds: $itemIds
+		itemQuantities: $itemQuantities
+		petIds: $petIds
+		voidMatter: $voidMatter
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		tradeOffer {
+			voidMatter
+			tradeBoxId
+			userId
+			username
+			tradeBox {
+				id
+				voidMatter
+				traderId
+				traderName
+				description
+				hasOffer
+				numOffers
+				timeLeft
+				petPreviews {
+					id
+					speciesId
+					level
+					stage
+					vivid
+					containerId
+				}
+				items {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation CreateTrophy($title: String!, $description: String!, $base: Int!, $speciesId: Int, $stage: Int, $itemId: Int) {
+	createTrophy(
+		title: $title
+		description: $description
+		base: $base
+		speciesId: $speciesId
+		stage: $stage
+		itemId: $itemId
+	) {
+		ok
+	}
+}
+mutation DeleteGuild {
+	deleteGuild {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation DeleteMe {
+	deleteMe {
+		ok
+	}
+}
+mutation DeleteTrophy($id: UUID!) {
+	deleteTrophy(id: $id) {
+		ok
+	}
+}
+mutation DescendCave {
+	descendCave {
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation DevRandomItem {
+	devRandomItem {
+		ok
+	}
+}
+mutation DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [String!]!, $y: [String!]!, $rotate: [Int!]!, $scale: [Float!]!, $mass: Int, $stiffness: Int, $damping: Int, $bounce: Int, $duration: Float) {
+	devSavePetItemPos(
+		type: $type
+		speciesId: $speciesId
+		stage: $stage
+		x: $x
+		y: $y
+		rotate: $rotate
+		scale: $scale
+		mass: $mass
+		stiffness: $stiffness
+		damping: $damping
+		bounce: $bounce
+		duration: $duration
+	) {
+		... on SimpleItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+		}
+		... on ColorItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			colors
+		}
+		__typename
+		__typename
+	}
+}
+mutation DrinkPotion($itemId: Int!, $petIds: [UUID!]!) {
+	drinkPotion(itemId: $itemId, petIds: $petIds) {
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+		pets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation EatFoodItem($itemId: Int!, $petIds: [UUID!]!) {
+	eatFoodItem(itemId: $itemId, petIds: $petIds) {
+		pets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation EditGuild($guildId: UUID!, $name: String!, $description: String!) {
+	editGuild(guildId: $guildId, name: $name, description: $description) {
+		guild {
+			id
+			name
+			description
+			ownerId
+			memberCount
+		}
+	}
+}
+mutation EvolvePet($id: UUID!) {
+	evolvePet(id: $id) {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation FleeBattle {
+	fleeBattle {
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		summary {
+			xp
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			voidMatter
+			questProgressStrings
+			flee
+			pets {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+					maxConfidence
+					maxConcentration
+					maxSatisfaction
+					maxSerenity
+					maxExcitement
+					maxWillpower
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHints
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+			questData {
+				quests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				availableQuests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				user {
+					id
+					username
+					instagramUsername
+					twitterUsername
+					tiktokUsername
+					youtubeChannelUrl
+					merchPurchased
+					signupNumber
+					bio
+					level
+					xp
+					xpCap
+					isBanned
+					giga
+					hairColorId
+					hairColors
+					voidMatterColorId
+					voidMatterColors
+					skinColorId
+					skinColors
+					eyeColorId
+					eyeColors
+					voidMatter
+					gigaMatter
+					gigaMatterClaimedAt
+					friendTag
+					questProgress {
+						questId
+						progressString
+						percentComplete
+						complete
+					}
+					guildId
+					guildRole
+					hairId
+					faceId
+					torsoId
+					legsId
+					backAccessoryId
+					frontAccessoryId
+					displayName
+					profileBgId
+					changeUsernameToken
+					linkAccess
+					reputation {
+						faction
+						value
+					}
+					numPets
+					petLimit
+					discordAvatarUrl
+					links {
+						title
+						subtitle
+						icon
+						link
+					}
+				}
+			}
+			user {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+		}
+	}
+}
+mutation ForceCatchPet($containerId: Int!) {
+	forceCatchPet(containerId: $containerId) {
+		state {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation ForgetManyPets($petIds: [UUID!]!) {
+	forgetManyPets(petIds: $petIds) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation ForgetPet($petId: UUID!) {
+	forgetPet(petId: $petId) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation FormGuild($name: String!) {
+	formGuild(name: $name) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation GenDevPet {
+	genDevPet {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		fields
+	}
+}
+mutation GigaCheckoutLink($yearly: Boolean) {
+	gigaCheckoutLink(yearly: $yearly) {
+		link
+	}
+}
+mutation GigaPortalLink {
+	gigaPortalLink {
+		link
+	}
+}
+mutation GiveUpCatching($flee: Boolean) {
+	giveUpCatching(flee: $flee) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation HealPets {
+	healPets {
+		id
+		name
+		level
+		stage
+		bondPoints
+		speciesId
+		ownerId
+		leptinDt
+		leptin
+		dopamineDt
+		dopamine
+		oxytocinDt
+		oxytocin
+		birthday
+		favorite
+		changeNameToken
+		metAt
+		originalMetAt
+		originalOwnerName
+		xp
+		items {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		xpCap
+		generation
+		stats {
+			moodHint
+			moodBoostBattleStat
+			hp
+			totalHp
+			confidence
+			concentration
+			satisfaction
+			serenity
+			excitement
+			willpower
+			maxConfidence
+			maxConcentration
+			maxSatisfaction
+			maxSerenity
+			maxExcitement
+			maxWillpower
+		}
+		weight
+		height
+		containerId
+		gender
+		orientation
+		chemistry
+		bonusHints
+		isVivid
+		variant
+		outlook
+		frameSize
+		theTotal
+		preference
+		moodIcon
+		mood
+	}
+}
+mutation InviteToGuild($friendTag: String!) {
+	inviteToGuild(friendTag: $friendTag) {
+		ok
+	}
+}
+mutation LeaveGuild {
+	leaveGuild {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation LinkClick($userId: String!, $link: String!) {
+	linkClick(userId: $userId, link: $link) {
+		ok
+	}
+}
+mutation Logout {
+	logout
+}
+mutation NameCaughtPet($name: String!) {
+	nameCaughtPet(name: $name) {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		isMainPet
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+		questData {
+			quests {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+			availableQuests {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+			user {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+		}
+		questProgressStrings
+	}
+}
+mutation PetStorageCheckoutLink {
+	petStorageCheckoutLink {
+		link
+	}
+}
+mutation PickUpQuestItem($itemId: Int!) {
+	pickUpQuestItem(itemId: $itemId) {
+		quests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		availableQuests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		item {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+		newProgressStrings
+	}
+}
+mutation PlayWithPet($id: UUID!, $activity: Int, $itemId: Int) {
+	playWithPet(id: $id, activity: $activity, itemId: $itemId) {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		hint
+		bondPoints
+		moodThresholdReached
+		dailyBonus {
+			barCount
+			streak
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation QuestInteraction($questId: Int!) {
+	questInteraction(questId: $questId) {
+		quests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		availableQuests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		questProgressStrings
+	}
+}
+mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: UUID!) {
+	reportUser(
+		description: $description
+		type: $type
+		badUsername: $badUsername
+		targetId: $targetId
+	) {
+		ok
+	}
+}
+mutation SavePetMoves($petId: UUID!, $newMoves: [String!]!, $moves: [String!]!) {
+	savePetMoves(petId: $petId, newMoves: $newMoves, moves: $moves) {
+		ok
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+		moves {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			move {
+				skill
+				cost
+				name
+				element
+				boosted
+				description
+				animIds
+				dmgIndicator
+			}
+			quantity
+			inventoryQuantity
+		}
+	}
+}
+mutation ScareAwayPet($wildPetId: UUID!) {
+	scareAwayPet(wildPetId: $wildPetId) {
+		vmStolen
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $quantity: Int!, $auctionLength: Int!) {
+	sellAuctionItem(
+		startingBid: $startingBid
+		buyoutPrice: $buyoutPrice
+		itemId: $itemId
+		quantity: $quantity
+		auctionLength: $auctionLength
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		auctionItem {
+			id
+			timeLeft
+			currentBidPrice
+			buyoutPrice
+			sellerId
+			sellerName
+			quantity
+			hasBid
+			currentUserHasBid
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+		}
+	}
+}
+mutation SendWildBattleSequence($sequence: [String!]!, $swapToPetId: UUID) {
+	sendWildBattleSequence(sequence: $sequence, swapToPetId: $swapToPetId) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		display {
+			... on SkillDisplayField {
+				text
+				playerDisplays {
+					playerId
+					dmgs {
+						hp
+						dmg
+						heal
+						crit
+						miss
+						type
+						boostedElement
+					}
+					effects {
+						text
+						field
+						value
+					}
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				anims {
+					animId
+					playerId
+					delay
+				}
+			}
+			... on SetStateDisplayField {
+				state {
+					locationId
+					id
+					winnerId
+					isGuildBattle
+					you {
+						id
+						pets {
+							id
+							totalHp
+							hp
+							variant
+							isVivid
+							speciesId
+							level
+							stage
+							name
+							frameSize
+							items {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								x
+								y
+								rotate
+								scale
+								duration
+							}
+							source
+							healingChange
+							critDmgChange
+							critChanceChange
+							confidenceChange
+							concentrationChange
+							satisfactionChange
+							serenityChange
+							excitementChange
+						}
+						currentMoves {
+							skill
+							cost
+							name
+							element
+							boosted
+							description
+							animIds
+							dmgIndicator
+						}
+						movePoints
+					}
+					opponent {
+						id
+						activePet {
+							id
+							totalHp
+							hp
+							variant
+							isVivid
+							speciesId
+							level
+							stage
+							name
+							frameSize
+							items {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								x
+								y
+								rotate
+								scale
+								duration
+							}
+							source
+							healingChange
+							critDmgChange
+							critChanceChange
+							confidenceChange
+							concentrationChange
+							satisfactionChange
+							serenityChange
+							excitementChange
+						}
+					}
+				}
+			}
+			__typename
+		}
+		summary {
+			xp
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			voidMatter
+			questProgressStrings
+			flee
+			pets {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+					maxConfidence
+					maxConcentration
+					maxSatisfaction
+					maxSerenity
+					maxExcitement
+					maxWillpower
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHints
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+			questData {
+				quests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				availableQuests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				user {
+					id
+					username
+					instagramUsername
+					twitterUsername
+					tiktokUsername
+					youtubeChannelUrl
+					merchPurchased
+					signupNumber
+					bio
+					level
+					xp
+					xpCap
+					isBanned
+					giga
+					hairColorId
+					hairColors
+					voidMatterColorId
+					voidMatterColors
+					skinColorId
+					skinColors
+					eyeColorId
+					eyeColors
+					voidMatter
+					gigaMatter
+					gigaMatterClaimedAt
+					friendTag
+					questProgress {
+						questId
+						progressString
+						percentComplete
+						complete
+					}
+					guildId
+					guildRole
+					hairId
+					faceId
+					torsoId
+					legsId
+					backAccessoryId
+					frontAccessoryId
+					displayName
+					profileBgId
+					changeUsernameToken
+					linkAccess
+					reputation {
+						faction
+						value
+					}
+					numPets
+					petLimit
+					discordAvatarUrl
+					links {
+						title
+						subtitle
+						icon
+						link
+					}
+				}
+			}
+			user {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+		}
+	}
+}
+mutation SetGuildRole($op: Int!, $userId: UUID!) {
+	setGuildRole(op: $op, userId: $userId) {
+		users {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation StabilizePlasma($itemId: Int!) {
+	stabilizePlasma(itemId: $itemId) {
+		items {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation StartCatching($wildPetId: UUID!) {
+	startCatching(wildPetId: $wildPetId) {
+		state {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation StartGuildBattle($playerId: UUID!) {
+	startGuildBattle(playerId: $playerId) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation StartNpcBattle($npc: Int!, $variant: Int!) {
+	startNpcBattle(npc: $npc, variant: $variant) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation StartWildBattle($wildPetId: UUID!) {
+	startWildBattle(wildPetId: $wildPetId) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation SwapDeadPet($swapToPetId: UUID!) {
+	swapDeadPet(swapToPetId: $swapToPetId) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		display {
+			... on SkillDisplayField {
+				text
+				playerDisplays {
+					playerId
+					dmgs {
+						hp
+						dmg
+						heal
+						crit
+						miss
+						type
+						boostedElement
+					}
+					effects {
+						text
+						field
+						value
+					}
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				anims {
+					animId
+					playerId
+					delay
+				}
+			}
+			... on SetStateDisplayField {
+				state {
+					locationId
+					id
+					winnerId
+					isGuildBattle
+					you {
+						id
+						pets {
+							id
+							totalHp
+							hp
+							variant
+							isVivid
+							speciesId
+							level
+							stage
+							name
+							frameSize
+							items {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								x
+								y
+								rotate
+								scale
+								duration
+							}
+							source
+							healingChange
+							critDmgChange
+							critChanceChange
+							confidenceChange
+							concentrationChange
+							satisfactionChange
+							serenityChange
+							excitementChange
+						}
+						currentMoves {
+							skill
+							cost
+							name
+							element
+							boosted
+							description
+							animIds
+							dmgIndicator
+						}
+						movePoints
+					}
+					opponent {
+						id
+						activePet {
+							id
+							totalHp
+							hp
+							variant
+							isVivid
+							speciesId
+							level
+							stage
+							name
+							frameSize
+							items {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								x
+								y
+								rotate
+								scale
+								duration
+							}
+							source
+							healingChange
+							critDmgChange
+							critChanceChange
+							confidenceChange
+							concentrationChange
+							satisfactionChange
+							serenityChange
+							excitementChange
+						}
+					}
+				}
+			}
+			__typename
+		}
+		summary {
+			xp
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			voidMatter
+			questProgressStrings
+			flee
+			pets {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+					maxConfidence
+					maxConcentration
+					maxSatisfaction
+					maxSerenity
+					maxExcitement
+					maxWillpower
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHints
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+			questData {
+				quests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				availableQuests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				user {
+					id
+					username
+					instagramUsername
+					twitterUsername
+					tiktokUsername
+					youtubeChannelUrl
+					merchPurchased
+					signupNumber
+					bio
+					level
+					xp
+					xpCap
+					isBanned
+					giga
+					hairColorId
+					hairColors
+					voidMatterColorId
+					voidMatterColors
+					skinColorId
+					skinColors
+					eyeColorId
+					eyeColors
+					voidMatter
+					gigaMatter
+					gigaMatterClaimedAt
+					friendTag
+					questProgress {
+						questId
+						progressString
+						percentComplete
+						complete
+					}
+					guildId
+					guildRole
+					hairId
+					faceId
+					torsoId
+					legsId
+					backAccessoryId
+					frontAccessoryId
+					displayName
+					profileBgId
+					changeUsernameToken
+					linkAccess
+					reputation {
+						faction
+						value
+					}
+					numPets
+					petLimit
+					discordAvatarUrl
+					links {
+						title
+						subtitle
+						icon
+						link
+					}
+				}
+			}
+			user {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+		}
+	}
+}
+mutation TakeIceCream {
+	takeIceCream {
+		item {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+		battleResponse {
+			state {
+				locationId
+				id
+				winnerId
+				isGuildBattle
+				you {
+					id
+					pets {
+						id
+						totalHp
+						hp
+						variant
+						isVivid
+						speciesId
+						level
+						stage
+						name
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						source
+						healingChange
+						critDmgChange
+						critChanceChange
+						confidenceChange
+						concentrationChange
+						satisfactionChange
+						serenityChange
+						excitementChange
+					}
+					currentMoves {
+						skill
+						cost
+						name
+						element
+						boosted
+						description
+						animIds
+						dmgIndicator
+					}
+					movePoints
+				}
+				opponent {
+					id
+					activePet {
+						id
+						totalHp
+						hp
+						variant
+						isVivid
+						speciesId
+						level
+						stage
+						name
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						source
+						healingChange
+						critDmgChange
+						critChanceChange
+						confidenceChange
+						concentrationChange
+						satisfactionChange
+						serenityChange
+						excitementChange
+					}
+				}
+			}
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation Teleport($zoneId: Int!) {
+	teleport(zoneId: $zoneId) {
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation ThrowItemAtPet($itemId: Int!, $wildPetId: UUID!, $code: String) {
+	throwItemAtPet(itemId: $itemId, wildPetId: $wildPetId, code: $code) {
+		petCaught {
+			xp
+			pets {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+					maxConfidence
+					maxConcentration
+					maxSatisfaction
+					maxSerenity
+					maxExcitement
+					maxWillpower
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHints
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+			pet {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+					maxConfidence
+					maxConcentration
+					maxSatisfaction
+					maxSerenity
+					maxExcitement
+					maxWillpower
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHints
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+			isMainPet
+			questData {
+				quests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				availableQuests {
+					id
+					questGiver
+					xpReward
+					voidMatterReward
+					name
+					description
+					pickOneReward
+					pickOneAccepting
+					rewards {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					inventoryRequirementList {
+						itemName
+						itemId
+						quantity
+					}
+					itemsForAccepting {
+						item {
+							... on SimpleItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+							}
+							... on ColorItemField {
+								id
+								name
+								type
+								rarity
+								description
+								vendorCost
+								skill
+								frame
+								gigaCost
+								animId
+								colors
+							}
+							__typename
+						}
+						quantity
+					}
+					startingProgressString
+					dailyStartedAt
+				}
+				user {
+					id
+					username
+					instagramUsername
+					twitterUsername
+					tiktokUsername
+					youtubeChannelUrl
+					merchPurchased
+					signupNumber
+					bio
+					level
+					xp
+					xpCap
+					isBanned
+					giga
+					hairColorId
+					hairColors
+					voidMatterColorId
+					voidMatterColors
+					skinColorId
+					skinColors
+					eyeColorId
+					eyeColors
+					voidMatter
+					gigaMatter
+					gigaMatterClaimedAt
+					friendTag
+					questProgress {
+						questId
+						progressString
+						percentComplete
+						complete
+					}
+					guildId
+					guildRole
+					hairId
+					faceId
+					torsoId
+					legsId
+					backAccessoryId
+					frontAccessoryId
+					displayName
+					profileBgId
+					changeUsernameToken
+					linkAccess
+					reputation {
+						faction
+						value
+					}
+					numPets
+					petLimit
+					discordAvatarUrl
+					links {
+						title
+						subtitle
+						icon
+						link
+					}
+				}
+			}
+			questProgressStrings
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+			voidMatter
+		}
+		petChange {
+			flee
+			location {
+				... on WildLocationField {
+					id
+					layer
+					zone
+					maxCursor
+					cursor
+					name
+					left
+					right
+					up
+					down
+					leave
+					seeingRed
+					things {
+						id
+						name
+						index
+						stage
+						speciesId
+						level
+						source
+						foodMeter
+						hpPercent
+						tmpCatchingStatus
+						tmpCatchingStatusEndsAt
+						catchingLoop {
+							status
+							start
+						}
+						isVivid
+						variant
+						frameSize
+						items {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							x
+							y
+							rotate
+							scale
+							duration
+						}
+						theTotal
+					}
+				}
+				__typename
+			}
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation TryToFriendCatching($containerId: Int!) {
+	tryToFriendCatching(containerId: $containerId) {
+		state {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}
+mutation TurnInQuest($questId: Int!, $itemId: Int) {
+	turnInQuest(questId: $questId, itemId: $itemId) {
+		quests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		availableQuests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		pets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		dailyInfo {
+			id
+			dailies {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation UpdateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $voidMatterColorId: Int, $hairId: Int, $backAccessoryId: Int, $frontAccessoryId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!) {
+	updateAvatar(
+		hairColorId: $hairColorId
+		skinColorId: $skinColorId
+		eyeColorId: $eyeColorId
+		voidMatterColorId: $voidMatterColorId
+		hairId: $hairId
+		backAccessoryId: $backAccessoryId
+		frontAccessoryId: $frontAccessoryId
+		faceId: $faceId
+		torsoId: $torsoId
+		legsId: $legsId
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation UpdateMainPets($mainPetIds: [String!]!) {
+	updateMainPets(mainPetIds: $mainPetIds) {
+		mainPets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+	}
+}
+mutation UpdateMe($input: String!) {
+	updateMe(input: $input) {
+		... on FieldErrorResponse {
+			field
+			error
+		}
+		... on User {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		__typename
+	}
+}
+mutation UpdateMyLocation($newLocationId: Int, $direction: Int) {
+	updateMyLocation(newLocationId: $newLocationId, direction: $direction) {
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}
+mutation UpdatePet($id: UUID!, $data: String!) {
+	updatePet(id: $id, data: $data) {
+		id
+		name
+		level
+		stage
+		bondPoints
+		speciesId
+		ownerId
+		leptinDt
+		leptin
+		dopamineDt
+		dopamine
+		oxytocinDt
+		oxytocin
+		birthday
+		favorite
+		changeNameToken
+		metAt
+		originalMetAt
+		originalOwnerName
+		xp
+		items {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		xpCap
+		generation
+		stats {
+			moodHint
+			moodBoostBattleStat
+			hp
+			totalHp
+			confidence
+			concentration
+			satisfaction
+			serenity
+			excitement
+			willpower
+			maxConfidence
+			maxConcentration
+			maxSatisfaction
+			maxSerenity
+			maxExcitement
+			maxWillpower
+		}
+		weight
+		height
+		containerId
+		gender
+		orientation
+		chemistry
+		bonusHints
+		isVivid
+		variant
+		outlook
+		frameSize
+		theTotal
+		preference
+		moodIcon
+		mood
+	}
+}
+mutation UpdatePetItems($petId: String!, $headItemId: Int, $neckItemId: Int) {
+	updatePetItems(petId: $petId, headItemId: $headItemId, neckItemId: $neckItemId) {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+mutation UpdateRep($input: [String!]!) {
+	updateRep(input: $input) {
+		id
+		username
+		instagramUsername
+		twitterUsername
+		tiktokUsername
+		youtubeChannelUrl
+		merchPurchased
+		signupNumber
+		bio
+		level
+		xp
+		xpCap
+		isBanned
+		giga
+		hairColorId
+		hairColors
+		voidMatterColorId
+		voidMatterColors
+		skinColorId
+		skinColors
+		eyeColorId
+		eyeColors
+		voidMatter
+		gigaMatter
+		gigaMatterClaimedAt
+		friendTag
+		questProgress {
+			questId
+			progressString
+			percentComplete
+			complete
+		}
+		guildId
+		guildRole
+		hairId
+		faceId
+		torsoId
+		legsId
+		backAccessoryId
+		frontAccessoryId
+		displayName
+		profileBgId
+		changeUsernameToken
+		linkAccess
+		reputation {
+			faction
+			value
+		}
+		numPets
+		petLimit
+		discordAvatarUrl
+		links {
+			title
+			subtitle
+			icon
+			link
+		}
+	}
+}
+mutation UsernameChangeCheckoutLink {
+	usernameChangeCheckoutLink {
+		link
+	}
+}
+query DevAllItems {
+	devAllItems {
+		... on SimpleItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+		}
+		... on ColorItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			colors
+		}
+		__typename
+	}
+}
+query DevGetPetItemMap {
+	devGetPetItemMap
+}
+query DevPets {
+	devPets {
+		id
+		name
+		level
+		stage
+		bondPoints
+		speciesId
+		ownerId
+		leptinDt
+		leptin
+		dopamineDt
+		dopamine
+		oxytocinDt
+		oxytocin
+		birthday
+		favorite
+		changeNameToken
+		metAt
+		originalMetAt
+		originalOwnerName
+		xp
+		items {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		xpCap
+		generation
+		stats {
+			moodHint
+			moodBoostBattleStat
+			hp
+			totalHp
+			confidence
+			concentration
+			satisfaction
+			serenity
+			excitement
+			willpower
+			maxConfidence
+			maxConcentration
+			maxSatisfaction
+			maxSerenity
+			maxExcitement
+			maxWillpower
+		}
+		weight
+		height
+		containerId
+		gender
+		orientation
+		chemistry
+		bonusHints
+		isVivid
+		variant
+		outlook
+		frameSize
+		theTotal
+		preference
+		moodIcon
+		mood
+	}
+}
+query GetAuctionItems($cursor: Int, $itemType: Int, $itemId: Int, $mine: Boolean, $sort: Int, $asc: Boolean) {
+	getAuctionItems(
+		cursor: $cursor
+		itemType: $itemType
+		itemId: $itemId
+		mine: $mine
+		sort: $sort
+		asc: $asc
+	) {
+		auctionItems {
+			id
+			timeLeft
+			currentBidPrice
+			buyoutPrice
+			sellerId
+			sellerName
+			quantity
+			hasBid
+			currentUserHasBid
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+		}
+		nextCursor
+	}
+}
+query GetAvatarItems {
+	getAvatarItems {
+		items {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+		itemsForSale {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}
+query GetBondLeaderboard {
+	getBondLeaderboard {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+	}
+}
+query GetDailyQuests($npc: Int!) {
+	getDailyQuests(npc: $npc) {
+		id
+		dailies {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+	}
+}
+query GetGigaStoreItems {
+	getGigaStoreItems {
+		items {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}
+query GetGuild($cursor: Int) {
+	getGuild(cursor: $cursor) {
+		guild {
+			id
+			name
+			description
+			ownerId
+			memberCount
+		}
+		members {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		nextCursor
+	}
+}
+query GetGuildInvites {
+	getGuildInvites {
+		guilds {
+			guild {
+				id
+				name
+				description
+				ownerId
+				memberCount
+			}
+			owner {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+		}
+	}
+}
+query GetInventory {
+	getInventory {
+		items {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}
+query GetLinkAnalytics {
+	getLinkAnalytics {
+		count
+		date
+		link
+	}
+}
+query GetMyLocation {
+	getMyLocation {
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+		questData {
+			quests {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+			availableQuests {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+			user {
+				id
+				username
+				instagramUsername
+				twitterUsername
+				tiktokUsername
+				youtubeChannelUrl
+				merchPurchased
+				signupNumber
+				bio
+				level
+				xp
+				xpCap
+				isBanned
+				giga
+				hairColorId
+				hairColors
+				voidMatterColorId
+				voidMatterColors
+				skinColorId
+				skinColors
+				eyeColorId
+				eyeColors
+				voidMatter
+				gigaMatter
+				gigaMatterClaimedAt
+				friendTag
+				questProgress {
+					questId
+					progressString
+					percentComplete
+					complete
+				}
+				guildId
+				guildRole
+				hairId
+				faceId
+				torsoId
+				legsId
+				backAccessoryId
+				frontAccessoryId
+				displayName
+				profileBgId
+				changeUsernameToken
+				linkAccess
+				reputation {
+					faction
+					value
+				}
+				numPets
+				petLimit
+				discordAvatarUrl
+				links {
+					title
+					subtitle
+					icon
+					link
+				}
+			}
+		}
+		battleState {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		catchingState {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+	}
+}
+query GetNotifs($cursor: Int) {
+	getNotifs(cursor: $cursor) {
+		notifs {
+			id
+			type
+			n
+			str
+			createdAt
+			guild {
+				id
+				name
+				description
+				ownerId
+				memberCount
+			}
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+		notifCount {
+			id
+			count
+		}
+	}
+}
+query GetNumUnreadNotifs {
+	getNumUnreadNotifs {
+		id
+		count
+	}
+}
+query GetPet($id: UUID!) {
+	getPet(id: $id) {
+		pet {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+	}
+}
+query GetPetItems($speciesId: Int!, $stage: Int!) {
+	getPetItems(speciesId: $speciesId, stage: $stage) {
+		petItems {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		petItemsForSale {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+	}
+}
+query GetPetLog($speciesId: Int!) {
+	getPetLog(speciesId: $speciesId) {
+		encounters {
+			caughtCount
+			facedCount
+			speciesId
+			stage
+			variant
+		}
+	}
+}
+query GetPetMoves($petId: UUID!) {
+	getPetMoves(petId: $petId) {
+		moves {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			move {
+				skill
+				cost
+				name
+				element
+				boosted
+				description
+				animIds
+				dmgIndicator
+			}
+			quantity
+			inventoryQuantity
+		}
+	}
+}
+query GetPets($cursor: Int, $secondaryElement: Int, $species: Int, $vivid: Int, $sort: Int, $asc: Boolean) {
+	getPets(
+		cursor: $cursor
+		secondaryElement: $secondaryElement
+		species: $species
+		vivid: $vivid
+		sort: $sort
+		asc: $asc
+	) {
+		pets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		nextCursor
+	}
+}
+query GetStarterAvatarItems {
+	getStarterAvatarItems {
+		starterItems {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}
+query GetTradeBoxes($cursor: Int, $itemType: Int, $itemId: Int, $stage: Int, $speciesId: Int, $vivid: Int, $username: String, $minLevel: Int, $mine: Boolean) {
+	getTradeBoxes(
+		cursor: $cursor
+		itemType: $itemType
+		itemId: $itemId
+		stage: $stage
+		speciesId: $speciesId
+		vivid: $vivid
+		username: $username
+		minLevel: $minLevel
+		mine: $mine
+	) {
+		tradeBoxes {
+			id
+			voidMatter
+			traderId
+			traderName
+			description
+			hasOffer
+			numOffers
+			timeLeft
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+	}
+}
+query GetTradeOffers($cursor: Int, $tradeBoxId: UUID) {
+	getTradeOffers(cursor: $cursor, tradeBoxId: $tradeBoxId) {
+		tradeOffers {
+			voidMatter
+			tradeBoxId
+			userId
+			username
+			tradeBox {
+				id
+				voidMatter
+				traderId
+				traderName
+				description
+				hasOffer
+				numOffers
+				timeLeft
+				petPreviews {
+					id
+					speciesId
+					level
+					stage
+					vivid
+					containerId
+				}
+				items {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+	}
+}
+query GetTrophies {
+	getTrophies {
+		id
+		title
+		description
+		base
+		item {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+		speciesId
+		stage
+		winners
+	}
+}
+query GetUser($username: String!) {
+	getUser(username: $username) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		mainPets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		trophies {
+			id
+			title
+			description
+			base
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			speciesId
+			stage
+			winners
+		}
+	}
+}
+query GetVendorItems($npc: Int!) {
+	getVendorItems(npc: $npc) {
+		items {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}
+query ItemNameSearch($query: String!) {
+	itemNameSearch(query: $query) {
+		items {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}
+query Me2 {
+	me2 {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		mainPets {
+			id
+			name
+			level
+			stage
+			bondPoints
+			speciesId
+			ownerId
+			leptinDt
+			leptin
+			dopamineDt
+			dopamine
+			oxytocinDt
+			oxytocin
+			birthday
+			favorite
+			changeNameToken
+			metAt
+			originalMetAt
+			originalOwnerName
+			xp
+			items {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				x
+				y
+				rotate
+				scale
+				duration
+			}
+			xpCap
+			generation
+			stats {
+				moodHint
+				moodBoostBattleStat
+				hp
+				totalHp
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+				maxConfidence
+				maxConcentration
+				maxSatisfaction
+				maxSerenity
+				maxExcitement
+				maxWillpower
+			}
+			weight
+			height
+			containerId
+			gender
+			orientation
+			chemistry
+			bonusHints
+			isVivid
+			variant
+			outlook
+			frameSize
+			theTotal
+			preference
+			moodIcon
+			mood
+		}
+		trophies {
+			id
+			title
+			description
+			base
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			speciesId
+			stage
+			winners
+		}
+	}
+}

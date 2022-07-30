@@ -6,7 +6,6 @@ authors = ["FoLZer"]
 
 
 [dependencies]
-serde = { version = "*", features = ["derive"] }
-serde_json = "*"
-reqwest = { version = "*", features = ["json"] }
-cynic = { version = "1.0.0" }
+uuid = { version = "*", features = ["serde"] }
+serde = "*"
+graphql_client = "*"
