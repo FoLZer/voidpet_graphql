@@ -1,0 +1,5 @@
+mutation GigaCheckoutLink($yearly: Boolean) {
+	gigaCheckoutLink(yearly: $yearly) {
+		link
+	}
+}

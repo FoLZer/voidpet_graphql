@@ -1,0 +1,5 @@
+mutation DeleteMe {
+	deleteMe {
+		ok
+	}
+}

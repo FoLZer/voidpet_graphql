@@ -1,0 +1,10 @@
+mutation AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $msg: String!) {
+	adminSendCustomNotif(
+		username: $username
+		shouldAddStrike: $shouldAddStrike
+		shouldHideProfile: $shouldHideProfile
+		msg: $msg
+	) {
+		ok
+	}
+}

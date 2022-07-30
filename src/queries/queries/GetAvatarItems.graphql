@@ -1,0 +1,60 @@
+query GetAvatarItems {
+	getAvatarItems {
+		items {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+		itemsForSale {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+	}
+}

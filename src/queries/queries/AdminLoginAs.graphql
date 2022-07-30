@@ -1,0 +1,5 @@
+mutation AdminLoginAs($username: String!) {
+	adminLoginAs(username: $username) {
+		ok
+	}
+}

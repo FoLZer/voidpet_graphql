@@ -1,0 +1,138 @@
+mutation ForceCatchPet($containerId: Int!) {
+	forceCatchPet(containerId: $containerId) {
+		state {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+query GetPetItems($speciesId: Int!, $stage: Int!) {
+	getPetItems(speciesId: $speciesId, stage: $stage) {
+		petItems {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+		petItemsForSale {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			x
+			y
+			rotate
+			scale
+			duration
+		}
+	}
+}

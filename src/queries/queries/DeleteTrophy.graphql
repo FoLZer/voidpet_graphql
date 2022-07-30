@@ -1,0 +1,5 @@
+mutation DeleteTrophy($id: Uuid!) {
+	deleteTrophy(id: $id) {
+		ok
+	}
+}

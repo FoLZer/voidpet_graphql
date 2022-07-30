@@ -1,0 +1,5 @@
+mutation AdminGivePet($username: String!, $s: String!) {
+	adminGivePet(username: $username, s: $s) {
+		ok
+	}
+}

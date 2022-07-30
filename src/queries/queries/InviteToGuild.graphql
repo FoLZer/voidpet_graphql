@@ -1,0 +1,5 @@
+mutation InviteToGuild($friendTag: String!) {
+	inviteToGuild(friendTag: $friendTag) {
+		ok
+	}
+}

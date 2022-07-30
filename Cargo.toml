@@ -1,11 +1,11 @@
 [package]
 name = "voidpet_graphql"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["FoLZer"]
 
 
 [dependencies]
-uuid = { version = "*", features = ["serde"] }
-serde = "*"
-graphql_client = "*"
+uuid = { version = "1.1.2", features = ["serde"] }
+serde = "1.0.140"
+graphql_client = "0.11.0"

@@ -1,0 +1,5 @@
+mutation BuyGigaMatterCheckoutLink($option: Int!) {
+	buyGigaMatterCheckoutLink(option: $option) {
+		link
+	}
+}

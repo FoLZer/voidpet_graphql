@@ -1,0 +1,11 @@
+query GetPetLog($speciesId: Int!) {
+	getPetLog(speciesId: $speciesId) {
+		encounters {
+			caughtCount
+			facedCount
+			speciesId
+			stage
+			variant
+		}
+	}
+}

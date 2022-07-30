@@ -1,0 +1,6 @@
+query GetNumUnreadNotifs {
+	getNumUnreadNotifs {
+		id
+		count
+	}
+}

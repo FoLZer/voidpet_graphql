@@ -1,0 +1,51 @@
+query GetAuctionItems($cursor: Int, $itemType: Int, $itemId: Int, $mine: Boolean, $sort: Int, $asc: Boolean) {
+	getAuctionItems(
+		cursor: $cursor
+		itemType: $itemType
+		itemId: $itemId
+		mine: $mine
+		sort: $sort
+		asc: $asc
+	) {
+		auctionItems {
+			id
+			timeLeft
+			currentBidPrice
+			buyoutPrice
+			sellerId
+			sellerName
+			quantity
+			hasBid
+			currentUserHasBid
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+		}
+		nextCursor
+	}
+}

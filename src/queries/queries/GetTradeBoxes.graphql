@@ -1,0 +1,64 @@
+query GetTradeBoxes($cursor: Int, $itemType: Int, $itemId: Int, $stage: Int, $speciesId: Int, $vivid: Int, $username: String, $minLevel: Int, $mine: Boolean) {
+	getTradeBoxes(
+		cursor: $cursor
+		itemType: $itemType
+		itemId: $itemId
+		stage: $stage
+		speciesId: $speciesId
+		vivid: $vivid
+		username: $username
+		minLevel: $minLevel
+		mine: $mine
+	) {
+		tradeBoxes {
+			id
+			voidMatter
+			traderId
+			traderName
+			description
+			hasOffer
+			numOffers
+			timeLeft
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+	}
+}

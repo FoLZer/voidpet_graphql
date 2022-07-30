@@ -1,0 +1,108 @@
+mutation SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $quantity: Int!, $auctionLength: Int!) {
+	sellAuctionItem(
+		startingBid: $startingBid
+		buyoutPrice: $buyoutPrice
+		itemId: $itemId
+		quantity: $quantity
+		auctionLength: $auctionLength
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		auctionItem {
+			id
+			timeLeft
+			currentBidPrice
+			buyoutPrice
+			sellerId
+			sellerName
+			quantity
+			hasBid
+			currentUserHasBid
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+		}
+	}
+}

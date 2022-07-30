@@ -1,0 +1,134 @@
+mutation StartCatching($wildPetId: Uuid!) {
+	startCatching(wildPetId: $wildPetId) {
+		state {
+			locationId
+			index
+			wildPet {
+				id
+				name
+				index
+				stage
+				speciesId
+				level
+				source
+				foodMeter
+				hpPercent
+				tmpCatchingStatus
+				tmpCatchingStatusEndsAt
+				catchingLoop {
+					status
+					start
+				}
+				isVivid
+				variant
+				frameSize
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				theTotal
+			}
+			container {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			cost
+			percent
+			caught
+			forced
+			hints
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}

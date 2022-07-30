@@ -1,0 +1,10 @@
+mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: Uuid!) {
+	reportUser(
+		description: $description
+		type: $type
+		badUsername: $badUsername
+		targetId: $targetId
+	) {
+		ok
+	}
+}

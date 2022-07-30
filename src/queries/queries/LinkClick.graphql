@@ -1,0 +1,5 @@
+mutation LinkClick($userId: String!, $link: String!) {
+	linkClick(userId: $userId, link: $link) {
+		ok
+	}
+}

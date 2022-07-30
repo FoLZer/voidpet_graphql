@@ -1,0 +1,44 @@
+mutation DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [String!]!, $y: [String!]!, $rotate: [Int!]!, $scale: [Float!]!, $mass: Int, $stiffness: Int, $damping: Int, $bounce: Int, $duration: Float) {
+	devSavePetItemPos(
+		type: $type
+		speciesId: $speciesId
+		stage: $stage
+		x: $x
+		y: $y
+		rotate: $rotate
+		scale: $scale
+		mass: $mass
+		stiffness: $stiffness
+		damping: $damping
+		bounce: $bounce
+		duration: $duration
+	) {
+		... on SimpleItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+		}
+		... on ColorItemField {
+			id
+			name
+			type
+			rarity
+			description
+			vendorCost
+			skill
+			frame
+			gigaCost
+			animId
+			colors
+		}
+		__typename
+		__typename
+	}
+}

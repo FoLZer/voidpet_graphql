@@ -1,0 +1,84 @@
+query GetDailyQuests($npc: Int!) {
+	getDailyQuests(npc: $npc) {
+		id
+		dailies {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+	}
+}

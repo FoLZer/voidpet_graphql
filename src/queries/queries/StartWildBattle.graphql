@@ -1,0 +1,158 @@
+mutation StartWildBattle($wildPetId: Uuid!) {
+	startWildBattle(wildPetId: $wildPetId) {
+		state {
+			locationId
+			id
+			winnerId
+			isGuildBattle
+			you {
+				id
+				pets {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+				currentMoves {
+					skill
+					cost
+					name
+					element
+					boosted
+					description
+					animIds
+					dmgIndicator
+				}
+				movePoints
+			}
+			opponent {
+				id
+				activePet {
+					id
+					totalHp
+					hp
+					variant
+					isVivid
+					speciesId
+					level
+					stage
+					name
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					source
+					healingChange
+					critDmgChange
+					critChanceChange
+					confidenceChange
+					concentrationChange
+					satisfactionChange
+					serenityChange
+					excitementChange
+				}
+			}
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
+		}
+	}
+}

@@ -1,0 +1,99 @@
+query GetTradeOffers($cursor: Int, $tradeBoxId: Uuid) {
+	getTradeOffers(cursor: $cursor, tradeBoxId: $tradeBoxId) {
+		tradeOffers {
+			voidMatter
+			tradeBoxId
+			userId
+			username
+			tradeBox {
+				id
+				voidMatter
+				traderId
+				traderName
+				description
+				hasOffer
+				numOffers
+				timeLeft
+				petPreviews {
+					id
+					speciesId
+					level
+					stage
+					vivid
+					containerId
+				}
+				items {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+	}
+}

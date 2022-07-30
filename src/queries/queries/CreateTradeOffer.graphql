@@ -1,0 +1,194 @@
+mutation CreateTradeOffer($tradeBoxId: Uuid!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [Uuid!]!, $voidMatter: Int) {
+	createTradeOffer(
+		tradeBoxId: $tradeBoxId
+		itemIds: $itemIds
+		itemQuantities: $itemQuantities
+		petIds: $petIds
+		voidMatter: $voidMatter
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		tradeOffer {
+			voidMatter
+			tradeBoxId
+			userId
+			username
+			tradeBox {
+				id
+				voidMatter
+				traderId
+				traderName
+				description
+				hasOffer
+				numOffers
+				timeLeft
+				petPreviews {
+					id
+					speciesId
+					level
+					stage
+					vivid
+					containerId
+				}
+				items {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}

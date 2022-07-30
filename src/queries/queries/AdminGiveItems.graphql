@@ -1,0 +1,5 @@
+mutation AdminGiveItems($username: String!, $amounts: [Int!]!, $itemIds: [Int!]!) {
+	adminGiveItems(username: $username, amounts: $amounts, itemIds: $itemIds) {
+		ok
+	}
+}

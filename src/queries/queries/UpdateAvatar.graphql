@@ -1,0 +1,105 @@
+mutation UpdateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!, $voidMatterColorId: Int, $hairId: Int, $backAccessoryId: Int, $frontAccessoryId: Int, $faceId: Int!, $torsoId: Int!, $legsId: Int!) {
+	updateAvatar(
+		hairColorId: $hairColorId
+		skinColorId: $skinColorId
+		eyeColorId: $eyeColorId
+		voidMatterColorId: $voidMatterColorId
+		hairId: $hairId
+		backAccessoryId: $backAccessoryId
+		frontAccessoryId: $frontAccessoryId
+		faceId: $faceId
+		torsoId: $torsoId
+		legsId: $legsId
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}

@@ -1,0 +1,90 @@
+query GetNotifs($cursor: Int) {
+	getNotifs(cursor: $cursor) {
+		notifs {
+			id
+			type
+			n
+			str
+			createdAt
+			guild {
+				id
+				name
+				description
+				ownerId
+				memberCount
+			}
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			petPreviews {
+				id
+				speciesId
+				level
+				stage
+				vivid
+				containerId
+			}
+			items {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+		}
+		nextCursor
+		notifCount {
+			id
+			count
+		}
+	}
+}

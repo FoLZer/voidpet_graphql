@@ -1,0 +1,39 @@
+query GetTrophies {
+	getTrophies {
+		id
+		title
+		description
+		base
+		item {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
+		speciesId
+		stage
+		winners
+	}
+}

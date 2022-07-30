@@ -1,0 +1,339 @@
+mutation AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: Int) {
+	acceptQuest(
+		questId: $questId
+		itemId: $itemId
+		name: $name
+		difficulty: $difficulty
+	) {
+		quests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		availableQuests {
+			id
+			questGiver
+			xpReward
+			voidMatterReward
+			name
+			description
+			pickOneReward
+			pickOneAccepting
+			rewards {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			inventoryRequirementList {
+				itemName
+				itemId
+				quantity
+			}
+			itemsForAccepting {
+				item {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				quantity
+			}
+			startingProgressString
+			dailyStartedAt
+		}
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		dailyInfo {
+			id
+			dailies {
+				id
+				questGiver
+				xpReward
+				voidMatterReward
+				name
+				description
+				pickOneReward
+				pickOneAccepting
+				rewards {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				inventoryRequirementList {
+					itemName
+					itemId
+					quantity
+				}
+				itemsForAccepting {
+					item {
+						... on SimpleItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+						}
+						... on ColorItemField {
+							id
+							name
+							type
+							rarity
+							description
+							vendorCost
+							skill
+							frame
+							gigaCost
+							animId
+							colors
+						}
+						__typename
+					}
+					quantity
+				}
+				startingProgressString
+				dailyStartedAt
+			}
+		}
+		inventoryChanges {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			quantity
+		}
+	}
+}

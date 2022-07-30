@@ -1,0 +1,5 @@
+mutation AwardTrophy($username: String!, $trophyId: Uuid!, $trophyTitle: String!) {
+	awardTrophy(username: $username, trophyId: $trophyId, trophyTitle: $trophyTitle) {
+		ok
+	}
+}

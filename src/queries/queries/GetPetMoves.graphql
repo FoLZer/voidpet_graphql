@@ -1,0 +1,46 @@
+query GetPetMoves($petId: Uuid!) {
+	getPetMoves(petId: $petId) {
+		moves {
+			item {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
+			move {
+				skill
+				cost
+				name
+				element
+				boosted
+				description
+				animIds
+				dmgIndicator
+			}
+			quantity
+			inventoryQuantity
+		}
+	}
+}
