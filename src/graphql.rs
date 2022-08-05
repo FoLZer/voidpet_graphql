@@ -1,4 +1,4 @@
-pub use graphql_client::{GraphQLQuery, Response};
+use graphql_client::GraphQLQuery;
 use uuid::Uuid;
 
 #[derive(GraphQLQuery)]
