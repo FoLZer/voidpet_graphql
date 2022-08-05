@@ -7,5 +7,5 @@ authors = ["FoLZer"]
 
 [dependencies]
 uuid = { version = "1.1.2", features = ["serde"] }
-serde = "1.0.140"
+serde = "^1.0"
 graphql_client = "0.11.0"
