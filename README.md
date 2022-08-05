@@ -28,7 +28,8 @@ async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Erro
     let client = reqwest::Client::builder().default_headers(ACCESS_COOKIES).build().unwrap();
     let mut res = client.post("https://api.voidpet.com/graphql").json(&request_body).send().await?;
     let response_body: Response<me2::ResponseData> = res.json().await?;
-    println!("{:#?}", response_body);
+	let response_data = response_body.data?.me2;
+    println!("{}", response_data.user.id);
     Ok(())
 }
 ```
