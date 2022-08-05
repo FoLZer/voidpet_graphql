@@ -13,11 +13,11 @@ Most of documentation and examples can be found at https://github.com/graphql-ru
 
 Simple Example:
 ```rust
-use graphql_client::{GraphQLQuery, Response};
 use std::error::Error;
 use reqwest;
 use voidpet_graphql::graphql::Me2;
 use voidpet_graphql::graphql::me2;
+use voidpet_graphql::graphql::{GraphQLQuery, Response};
 
 async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Error>> {
 
