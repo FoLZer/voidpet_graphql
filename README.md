@@ -26,9 +26,12 @@ async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Erro
 
     // change ACCESS_COOKIES to your cookies when accessing api.voidpet.com
     let client = reqwest::Client::builder().default_headers(ACCESS_COOKIES).build().unwrap();
-    let mut res = client.post("http://api.voidpet.com/graphql").json(&request_body).send().await?;
+    let mut res = client.post("https://api.voidpet.com/graphql").json(&request_body).send().await?;
     let response_body: Response<me2::ResponseData> = res.json().await?;
     println!("{:#?}", response_body);
     Ok(())
 }
 ```
+
+## Version
+Made for voidpet version 0.19.0
