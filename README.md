@@ -15,8 +15,7 @@ Simple Example:
 ```rust
 use std::error::Error;
 use reqwest;
-use voidpet_graphql::graphql::Me2;
-use voidpet_graphql::graphql::me2;
+use voidpet_graphql::graphql::{Me2, me2};
 use graphql_client::{GraphQLQuery, Response};
 
 async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Error>> {
@@ -25,14 +24,19 @@ async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Erro
     let request_body = Me2::build_query(variables);
 
     // change ACCESS_COOKIES to your cookies when accessing api.voidpet.com
-    let client = reqwest::Client::builder().default_headers(ACCESS_COOKIES).build().unwrap();
+    let mut headers = reqwest::header::HeaderMap::new();
+    headers.insert(reqwest::header::COOKIE, ACCESS_COOKIES);
+    // change USER_AGENT to your user agent when accessing api.voidpet.com
+    headers.insert(reqwest::header::USER_AGENT, USER_AGENT);
+    let client = reqwest::Client::builder().default_headers(headers).build().unwrap();
+    
     let mut res = client.post("https://api.voidpet.com/graphql").json(&request_body).send().await?;
     let response_body: Response<me2::ResponseData> = res.json().await?;
-	let response_data = response_body.data?.me2;
+    let response_data = response_body.data?.me2;
     println!("{}", response_data.user.id);
     Ok(())
 }
 ```
 
 ## Version
-Made for voidpet version 0.19.0
+Made for Voidpet version 0.19.0
