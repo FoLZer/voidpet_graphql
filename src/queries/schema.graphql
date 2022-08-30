@@ -509,7 +509,7 @@ type Stats {
 type User {
 	backAccessoryId: Int
 	bio: String
-	changeUsernameToken: String!
+	changeUsernameToken: Int!
 	discordAvatarUrl: String
 	displayName: String
 	eyeColorId: Int
