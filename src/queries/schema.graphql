@@ -521,7 +521,7 @@ type User {
 	gigaMatter: Int!
 	gigaMatterClaimedAt: String
 	guildId: String
-	guildRole: String
+	guildRole: Int
 	hairColorId: Int
 	hairColors: [String!]
 	hairId: Int
