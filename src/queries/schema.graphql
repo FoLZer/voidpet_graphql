@@ -517,7 +517,7 @@ type User {
 	faceId: Int
 	friendTag: String!
 	frontAccessoryId: Int
-	giga: Boolean!
+	giga: Int!
 	gigaMatter: Int!
 	gigaMatterClaimedAt: String
 	guildId: String
@@ -532,7 +532,7 @@ type User {
 	level: Int!
 	linkAccess: Boolean
 	links: [ProfileLink!]
-	merchPurchased: Boolean
+	merchPurchased: String
 	numPets: Int!
 	petLimit: Int!
 	profileBgId: Int
