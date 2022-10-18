@@ -511,6 +511,7 @@ type Stats {
 	breakdown: [StatBreakdown!]!
 	hp: Int!
 	moodBoostBattleStat: String
+	moodHint: String
 	totalHp: Int!
 	willpower: Int!
 }
