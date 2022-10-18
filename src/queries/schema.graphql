@@ -1023,6 +1023,7 @@ type PetResponse {
 }
 
 type UserResponse {
+	isBlocked: Boolean
 	mainPets: [Pet!]!
 	trophies: [Trophy!]!
 	user: User!
