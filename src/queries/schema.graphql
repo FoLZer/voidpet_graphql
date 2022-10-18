@@ -242,6 +242,12 @@ type BattleSummaryInfo {
 	xp: Int!
 }
 
+type SummaryQuestLogResponse {
+	availableQuests: [QuestField!]!
+	quests: [QuestField!]!
+	user: User!
+}
+
 """
 TODO: CHECK INT/STRING TYPES
 """
