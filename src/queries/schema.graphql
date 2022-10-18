@@ -477,7 +477,7 @@ type Pet {
 	mood: String!
 	moodIcon: String!
 	name: String!
-	nature: String!
+	nature: Int!
 	orientation: Int!
 	originalMetAt: String
 	originalOwnerName: String
