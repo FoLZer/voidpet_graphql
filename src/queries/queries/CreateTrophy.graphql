@@ -1,7 +1,8 @@
-mutation CreateTrophy($title: String!, $description: String!, $base: Int!, $speciesId: Int, $stage: Int, $itemId: Int) {
+mutation CreateTrophy($title: String!, $description: String!, $colorId: String!, $base: Int!, $speciesId: Int, $stage: Int, $itemId: Int) {
 	createTrophy(
 		title: $title
 		description: $description
+		colorId: $colorId
 		base: $base
 		speciesId: $speciesId
 		stage: $stage

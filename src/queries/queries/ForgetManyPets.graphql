@@ -1,4 +1,4 @@
-mutation ForgetManyPets($petIds: [Uuid!]!) {
+mutation ForgetManyPets($petIds: [UUID!]!) {
 	forgetManyPets(petIds: $petIds) {
 		user {
 			id
@@ -12,6 +12,7 @@ mutation ForgetManyPets($petIds: [Uuid!]!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation ForgetManyPets($petIds: [Uuid!]!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value
@@ -89,6 +93,62 @@ mutation ForgetManyPets($petIds: [Uuid!]!) {
 				__typename
 			}
 			quantity
+		}
+		location {
+			... on WildLocationField {
+				id
+				layer
+				zone
+				maxCursor
+				cursor
+				name
+				left
+				right
+				up
+				down
+				leave
+				seeingRed
+				things {
+					id
+					name
+					index
+					stage
+					speciesId
+					level
+					source
+					nature
+					foodMeter
+					hpPercent
+					tmpCatchingStatus
+					tmpCatchingStatusEndsAt
+					catchingLoop {
+						status
+						start
+					}
+					isVivid
+					variant
+					frameSize
+					items {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						x
+						y
+						rotate
+						scale
+						duration
+					}
+					theTotal
+				}
+			}
+			__typename
 		}
 	}
 }

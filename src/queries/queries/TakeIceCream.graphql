@@ -47,6 +47,7 @@ mutation TakeIceCream {
 						isVivid
 						speciesId
 						level
+						nature
 						stage
 						name
 						frameSize
@@ -99,6 +100,7 @@ mutation TakeIceCream {
 						isVivid
 						speciesId
 						level
+						nature
 						stage
 						name
 						frameSize
@@ -153,6 +155,7 @@ mutation TakeIceCream {
 						speciesId
 						level
 						source
+						nature
 						foodMeter
 						hpPercent
 						tmpCatchingStatus
@@ -199,6 +202,7 @@ mutation TakeIceCream {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -232,6 +236,9 @@ mutation TakeIceCream {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

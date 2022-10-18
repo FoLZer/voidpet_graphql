@@ -1,9 +1,5 @@
-mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Boolean!) {
-	answerTradeOffer(
-		tradeBoxId: $tradeBoxId
-		userOfferId: $userOfferId
-		accept: $accept
-	) {
+mutation CreatePetTeam($name: String!, $petIds: [UUID!]!) {
+	createPetTeam(name: $name, petIds: $petIds) {
 		user {
 			id
 			username
@@ -67,25 +63,49 @@ mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Bool
 				link
 			}
 		}
-		tradeBox {
+		petTeam {
 			id
-			voidMatter
-			traderId
-			traderName
-			description
-			hasOffer
-			numOffers
-			timeLeft
-			petPreviews {
+			name
+			pets {
 				id
-				speciesId
+				name
 				level
 				stage
-				vivid
-				containerId
-			}
-			items {
-				item {
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				nature
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				trinkets {
 					... on SimpleItemField {
 						id
 						name
@@ -113,39 +133,42 @@ mutation AnswerTradeOffer($tradeBoxId: UUID!, $userOfferId: UUID!, $accept: Bool
 					}
 					__typename
 				}
-				quantity
-			}
-		}
-		inventoryChanges {
-			item {
-				... on SimpleItemField {
-					id
-					name
-					type
-					rarity
-					description
-					vendorCost
-					skill
-					frame
-					gigaCost
-					animId
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					breakdown {
+						name
+						confidence
+						concentration
+						satisfaction
+						serenity
+						excitement
+						willpower
+					}
 				}
-				... on ColorItemField {
-					id
-					name
-					type
-					rarity
-					description
-					vendorCost
-					skill
-					frame
-					gigaCost
-					animId
-					colors
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHintTips {
+					chipText
+					hoverText
 				}
-				__typename
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
 			}
-			quantity
 		}
 	}
 }

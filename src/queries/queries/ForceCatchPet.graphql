@@ -11,6 +11,7 @@ mutation ForceCatchPet($containerId: Int!) {
 				speciesId
 				level
 				source
+				nature
 				foodMeter
 				hpPercent
 				tmpCatchingStatus
@@ -87,6 +88,7 @@ mutation ForceCatchPet($containerId: Int!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -120,6 +122,9 @@ mutation ForceCatchPet($containerId: Int!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

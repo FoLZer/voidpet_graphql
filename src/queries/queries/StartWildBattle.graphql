@@ -1,4 +1,4 @@
-mutation StartWildBattle($wildPetId: Uuid!) {
+mutation StartWildBattle($wildPetId: UUID!) {
 	startWildBattle(wildPetId: $wildPetId) {
 		state {
 			locationId
@@ -15,6 +15,7 @@ mutation StartWildBattle($wildPetId: Uuid!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -67,6 +68,7 @@ mutation StartWildBattle($wildPetId: Uuid!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -121,6 +123,7 @@ mutation StartWildBattle($wildPetId: Uuid!) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

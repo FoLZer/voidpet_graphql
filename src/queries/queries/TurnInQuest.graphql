@@ -179,6 +179,7 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 			originalMetAt
 			originalOwnerName
 			xp
+			nature
 			items {
 				id
 				name
@@ -196,6 +197,34 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 				scale
 				duration
 			}
+			trinkets {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
 			xpCap
 			generation
 			stats {
@@ -203,18 +232,15 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 				moodBoostBattleStat
 				hp
 				totalHp
-				confidence
-				concentration
-				satisfaction
-				serenity
-				excitement
-				willpower
-				maxConfidence
-				maxConcentration
-				maxSatisfaction
-				maxSerenity
-				maxExcitement
-				maxWillpower
+				breakdown {
+					name
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+				}
 			}
 			weight
 			height
@@ -222,7 +248,10 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 			gender
 			orientation
 			chemistry
-			bonusHints
+			bonusHintTips {
+				chipText
+				hoverText
+			}
 			isVivid
 			variant
 			outlook
@@ -244,6 +273,7 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -277,6 +307,9 @@ mutation TurnInQuest($questId: Int!, $itemId: Int) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

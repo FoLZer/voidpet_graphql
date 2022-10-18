@@ -1,5 +1,5 @@
-mutation CancelAuctionItem($auctionItemId: UUID!) {
-	cancelAuctionItem(auctionItemId: $auctionItemId) {
+mutation CancelTradeOffer($tradeBoxId: UUID!) {
+	cancelTradeOffer(tradeBoxId: $tradeBoxId) {
 		user {
 			id
 			username
@@ -63,7 +63,7 @@ mutation CancelAuctionItem($auctionItemId: UUID!) {
 				link
 			}
 		}
-		inventoryItem {
+		inventoryChanges {
 			item {
 				... on SimpleItemField {
 					id

@@ -1,4 +1,4 @@
-mutation ForgetPet($petId: Uuid!) {
+mutation ForgetPet($petId: UUID!) {
 	forgetPet(petId: $petId) {
 		user {
 			id
@@ -12,6 +12,7 @@ mutation ForgetPet($petId: Uuid!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga

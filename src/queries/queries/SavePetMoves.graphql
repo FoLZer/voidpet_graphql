@@ -1,4 +1,4 @@
-mutation SavePetMoves($petId: Uuid!, $newMoves: [String!]!, $moves: [String!]!) {
+mutation SavePetMoves($petId: UUID!, $newMoves: [MoveInput!]!, $moves: [MoveInput!]!) {
 	savePetMoves(petId: $petId, newMoves: $newMoves, moves: $moves) {
 		ok
 		user {
@@ -13,6 +13,7 @@ mutation SavePetMoves($petId: Uuid!, $newMoves: [String!]!, $moves: [String!]!) 
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -46,6 +47,9 @@ mutation SavePetMoves($petId: Uuid!, $newMoves: [String!]!, $moves: [String!]!) 
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

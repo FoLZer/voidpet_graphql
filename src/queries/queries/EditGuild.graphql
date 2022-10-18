@@ -1,4 +1,4 @@
-mutation EditGuild($guildId: Uuid!, $name: String!, $description: String!) {
+mutation EditGuild($guildId: UUID!, $name: String!, $description: String!) {
 	editGuild(guildId: $guildId, name: $name, description: $description) {
 		guild {
 			id

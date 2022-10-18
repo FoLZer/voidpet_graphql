@@ -1,4 +1,4 @@
-mutation EvolvePet($id: Uuid!) {
+mutation EvolvePet($id: UUID!) {
 	evolvePet(id: $id) {
 		pet {
 			id
@@ -21,6 +21,7 @@ mutation EvolvePet($id: Uuid!) {
 			originalMetAt
 			originalOwnerName
 			xp
+			nature
 			items {
 				id
 				name
@@ -38,6 +39,34 @@ mutation EvolvePet($id: Uuid!) {
 				scale
 				duration
 			}
+			trinkets {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
 			xpCap
 			generation
 			stats {
@@ -45,18 +74,15 @@ mutation EvolvePet($id: Uuid!) {
 				moodBoostBattleStat
 				hp
 				totalHp
-				confidence
-				concentration
-				satisfaction
-				serenity
-				excitement
-				willpower
-				maxConfidence
-				maxConcentration
-				maxSatisfaction
-				maxSerenity
-				maxExcitement
-				maxWillpower
+				breakdown {
+					name
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+				}
 			}
 			weight
 			height
@@ -64,7 +90,10 @@ mutation EvolvePet($id: Uuid!) {
 			gender
 			orientation
 			chemistry
-			bonusHints
+			bonusHintTips {
+				chipText
+				hoverText
+			}
 			isVivid
 			variant
 			outlook

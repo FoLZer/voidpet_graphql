@@ -1,70 +1,6 @@
-query GetUser($username: String!) {
-	getUser(username: $username) {
-		user {
-			id
-			username
-			instagramUsername
-			twitterUsername
-			tiktokUsername
-			youtubeChannelUrl
-			merchPurchased
-			signupNumber
-			bio
-			level
-			xp
-			envyCounter
-			xpCap
-			isBanned
-			giga
-			hairColorId
-			hairColors
-			voidMatterColorId
-			voidMatterColors
-			skinColorId
-			skinColors
-			eyeColorId
-			eyeColors
-			voidMatter
-			gigaMatter
-			gigaMatterClaimedAt
-			friendTag
-			questProgress {
-				questId
-				progressString
-				percentComplete
-				complete
-			}
-			guildId
-			guildRole
-			hairId
-			faceId
-			torsoId
-			legsId
-			backAccessoryId
-			frontAccessoryId
-			displayName
-			profileBgId
-			changeUsernameToken
-			linkAccess
-			numPetTeams
-			currPetTeamId
-			currPetTeamName
-			reputation {
-				faction
-				value
-			}
-			numPets
-			petLimit
-			discordAvatarUrl
-			links {
-				title
-				subtitle
-				icon
-				link
-			}
-		}
-		isBlocked
-		mainPets {
+mutation UpdatePetTrinkets($id: UUID!, $data: PetTrinketsInput!) {
+	updatePetTrinkets(id: $id, data: $data) {
+		pet {
 			id
 			name
 			level
@@ -167,12 +103,70 @@ query GetUser($username: String!) {
 			moodIcon
 			mood
 		}
-		trophies {
+		user {
 			id
-			title
-			description
-			colorId
-			base
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			envyCounter
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
+		inventoryChanges {
 			item {
 				... on SimpleItemField {
 					id
@@ -201,9 +195,7 @@ query GetUser($username: String!) {
 				}
 				__typename
 			}
-			speciesId
-			stage
-			winners
+			quantity
 		}
 	}
 }

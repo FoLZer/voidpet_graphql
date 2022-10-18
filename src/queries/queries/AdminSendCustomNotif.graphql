@@ -1,10 +1,12 @@
-mutation AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $msg: String!) {
+mutation AdminSendCustomNotif($username: String!, $shouldAddStrike: Boolean!, $shouldHideProfile: Boolean!, $permaban: Boolean, $msg: String!) {
 	adminSendCustomNotif(
 		username: $username
 		shouldAddStrike: $shouldAddStrike
 		shouldHideProfile: $shouldHideProfile
+		permaban: $permaban
 		msg: $msg
 	) {
 		ok
 	}
 }
+mut

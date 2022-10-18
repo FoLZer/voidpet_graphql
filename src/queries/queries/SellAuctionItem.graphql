@@ -18,6 +18,7 @@ mutation SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $q
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -51,6 +52,9 @@ mutation SellAuctionItem($startingBid: Int, $buyoutPrice: Int, $itemId: Int!, $q
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

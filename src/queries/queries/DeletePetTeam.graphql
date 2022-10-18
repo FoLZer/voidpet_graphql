@@ -1,5 +1,5 @@
-mutation CancelAuctionItem($auctionItemId: UUID!) {
-	cancelAuctionItem(auctionItemId: $auctionItemId) {
+mutation DeletePetTeam($id: UUID!) {
+	deletePetTeam(id: $id) {
 		user {
 			id
 			username
@@ -62,37 +62,6 @@ mutation CancelAuctionItem($auctionItemId: UUID!) {
 				icon
 				link
 			}
-		}
-		inventoryItem {
-			item {
-				... on SimpleItemField {
-					id
-					name
-					type
-					rarity
-					description
-					vendorCost
-					skill
-					frame
-					gigaCost
-					animId
-				}
-				... on ColorItemField {
-					id
-					name
-					type
-					rarity
-					description
-					vendorCost
-					skill
-					frame
-					gigaCost
-					animId
-					colors
-				}
-				__typename
-			}
-			quantity
 		}
 	}
 }

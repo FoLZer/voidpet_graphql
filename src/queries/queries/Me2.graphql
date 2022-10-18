@@ -12,6 +12,7 @@ query Me2 {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ query Me2 {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value
@@ -59,6 +63,7 @@ query Me2 {
 				link
 			}
 		}
+		isBlocked
 		mainPets {
 			id
 			name
@@ -80,6 +85,7 @@ query Me2 {
 			originalMetAt
 			originalOwnerName
 			xp
+			nature
 			items {
 				id
 				name
@@ -97,6 +103,34 @@ query Me2 {
 				scale
 				duration
 			}
+			trinkets {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
 			xpCap
 			generation
 			stats {
@@ -104,18 +138,15 @@ query Me2 {
 				moodBoostBattleStat
 				hp
 				totalHp
-				confidence
-				concentration
-				satisfaction
-				serenity
-				excitement
-				willpower
-				maxConfidence
-				maxConcentration
-				maxSatisfaction
-				maxSerenity
-				maxExcitement
-				maxWillpower
+				breakdown {
+					name
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+				}
 			}
 			weight
 			height
@@ -123,7 +154,10 @@ query Me2 {
 			gender
 			orientation
 			chemistry
-			bonusHints
+			bonusHintTips {
+				chipText
+				hoverText
+			}
 			isVivid
 			variant
 			outlook
@@ -137,6 +171,7 @@ query Me2 {
 			id
 			title
 			description
+			colorId
 			base
 			item {
 				... on SimpleItemField {

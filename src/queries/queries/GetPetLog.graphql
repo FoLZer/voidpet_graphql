@@ -3,6 +3,7 @@ query GetPetLog($speciesId: Int!) {
 		encounters {
 			caughtCount
 			facedCount
+			tradedCount
 			speciesId
 			stage
 			variant

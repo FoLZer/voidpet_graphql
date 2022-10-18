@@ -1,4 +1,4 @@
-mutation StartCatching($wildPetId: Uuid!) {
+mutation StartCatching($wildPetId: UUID!) {
 	startCatching(wildPetId: $wildPetId) {
 		state {
 			locationId
@@ -11,6 +11,7 @@ mutation StartCatching($wildPetId: Uuid!) {
 				speciesId
 				level
 				source
+				nature
 				foodMeter
 				hpPercent
 				tmpCatchingStatus
@@ -97,6 +98,7 @@ mutation StartCatching($wildPetId: Uuid!) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

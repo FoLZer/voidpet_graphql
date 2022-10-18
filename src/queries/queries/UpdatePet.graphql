@@ -1,4 +1,4 @@
-mutation UpdatePet($id: Uuid!, $data: String!) {
+mutation UpdatePet($id: UUID!, $data: PetInput!) {
 	updatePet(id: $id, data: $data) {
 		id
 		name
@@ -20,6 +20,7 @@ mutation UpdatePet($id: Uuid!, $data: String!) {
 		originalMetAt
 		originalOwnerName
 		xp
+		nature
 		items {
 			id
 			name
@@ -37,6 +38,34 @@ mutation UpdatePet($id: Uuid!, $data: String!) {
 			scale
 			duration
 		}
+		trinkets {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
 		xpCap
 		generation
 		stats {
@@ -44,18 +73,15 @@ mutation UpdatePet($id: Uuid!, $data: String!) {
 			moodBoostBattleStat
 			hp
 			totalHp
-			confidence
-			concentration
-			satisfaction
-			serenity
-			excitement
-			willpower
-			maxConfidence
-			maxConcentration
-			maxSatisfaction
-			maxSerenity
-			maxExcitement
-			maxWillpower
+			breakdown {
+				name
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+			}
 		}
 		weight
 		height
@@ -63,7 +89,10 @@ mutation UpdatePet($id: Uuid!, $data: String!) {
 		gender
 		orientation
 		chemistry
-		bonusHints
+		bonusHintTips {
+			chipText
+			hoverText
+		}
 		isVivid
 		variant
 		outlook

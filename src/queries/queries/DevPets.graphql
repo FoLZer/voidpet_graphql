@@ -20,6 +20,7 @@ query DevPets {
 		originalMetAt
 		originalOwnerName
 		xp
+		nature
 		items {
 			id
 			name
@@ -37,6 +38,34 @@ query DevPets {
 			scale
 			duration
 		}
+		trinkets {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
 		xpCap
 		generation
 		stats {
@@ -44,18 +73,15 @@ query DevPets {
 			moodBoostBattleStat
 			hp
 			totalHp
-			confidence
-			concentration
-			satisfaction
-			serenity
-			excitement
-			willpower
-			maxConfidence
-			maxConcentration
-			maxSatisfaction
-			maxSerenity
-			maxExcitement
-			maxWillpower
+			breakdown {
+				name
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+			}
 		}
 		weight
 		height
@@ -63,7 +89,10 @@ query DevPets {
 		gender
 		orientation
 		chemistry
-		bonusHints
+		bonusHintTips {
+			chipText
+			hoverText
+		}
 		isVivid
 		variant
 		outlook

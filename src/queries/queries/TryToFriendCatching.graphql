@@ -11,6 +11,7 @@ mutation TryToFriendCatching($containerId: Int!) {
 				speciesId
 				level
 				source
+				nature
 				foodMeter
 				hpPercent
 				tmpCatchingStatus
@@ -97,6 +98,7 @@ mutation TryToFriendCatching($containerId: Int!) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus
@@ -142,6 +144,7 @@ mutation TryToFriendCatching($containerId: Int!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -175,6 +178,9 @@ mutation TryToFriendCatching($containerId: Int!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

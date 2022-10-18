@@ -12,6 +12,7 @@ mutation BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation BuyVendorItem($itemId: Int!, $quantity: Int, $npc: Int!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

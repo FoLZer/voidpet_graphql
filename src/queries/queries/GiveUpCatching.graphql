@@ -12,6 +12,7 @@ mutation GiveUpCatching($flee: Boolean) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation GiveUpCatching($flee: Boolean) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value
@@ -81,6 +85,7 @@ mutation GiveUpCatching($flee: Boolean) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

@@ -1,0 +1,112 @@
+query GetPetTeams($cursor: Int) {
+	getPetTeams(cursor: $cursor) {
+		petTeams {
+			id
+			name
+			pets {
+				id
+				name
+				level
+				stage
+				bondPoints
+				speciesId
+				ownerId
+				leptinDt
+				leptin
+				dopamineDt
+				dopamine
+				oxytocinDt
+				oxytocin
+				birthday
+				favorite
+				changeNameToken
+				metAt
+				originalMetAt
+				originalOwnerName
+				xp
+				nature
+				items {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					x
+					y
+					rotate
+					scale
+					duration
+				}
+				trinkets {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
+				xpCap
+				generation
+				stats {
+					moodHint
+					moodBoostBattleStat
+					hp
+					totalHp
+					breakdown {
+						name
+						confidence
+						concentration
+						satisfaction
+						serenity
+						excitement
+						willpower
+					}
+				}
+				weight
+				height
+				containerId
+				gender
+				orientation
+				chemistry
+				bonusHintTips {
+					chipText
+					hoverText
+				}
+				isVivid
+				variant
+				outlook
+				frameSize
+				theTotal
+				preference
+				moodIcon
+				mood
+			}
+		}
+		nextCursor
+	}
+}

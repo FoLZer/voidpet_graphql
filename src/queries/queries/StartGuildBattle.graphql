@@ -1,4 +1,4 @@
-mutation StartGuildBattle($playerId: Uuid!) {
+mutation StartGuildBattle($playerId: UUID!) {
 	startGuildBattle(playerId: $playerId) {
 		state {
 			locationId
@@ -15,6 +15,7 @@ mutation StartGuildBattle($playerId: Uuid!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -67,6 +68,7 @@ mutation StartGuildBattle($playerId: Uuid!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -121,6 +123,7 @@ mutation StartGuildBattle($playerId: Uuid!) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

@@ -3,6 +3,7 @@ query GetTrophies {
 		id
 		title
 		description
+		colorId
 		base
 		item {
 			... on SimpleItemField {

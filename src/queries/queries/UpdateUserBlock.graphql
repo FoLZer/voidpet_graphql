@@ -1,0 +1,5 @@
+mutation UpdateUserBlock($targetId: UUID!, $block: Boolean!) {
+	updateUserBlock(targetId: $targetId, block: $block) {
+		ok
+	}
+}

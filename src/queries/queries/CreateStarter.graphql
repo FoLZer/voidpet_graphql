@@ -1,4 +1,4 @@
-mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
+mutation CreateStarter($name: String!, $species: PetStarterSpecies, $speciesId: Int) {
 	createStarter(name: $name, species: $species, speciesId: $speciesId) {
 		id
 		name
@@ -20,6 +20,7 @@ mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
 		originalMetAt
 		originalOwnerName
 		xp
+		nature
 		items {
 			id
 			name
@@ -37,6 +38,34 @@ mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
 			scale
 			duration
 		}
+		trinkets {
+			... on SimpleItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+			}
+			... on ColorItemField {
+				id
+				name
+				type
+				rarity
+				description
+				vendorCost
+				skill
+				frame
+				gigaCost
+				animId
+				colors
+			}
+			__typename
+		}
 		xpCap
 		generation
 		stats {
@@ -44,18 +73,15 @@ mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
 			moodBoostBattleStat
 			hp
 			totalHp
-			confidence
-			concentration
-			satisfaction
-			serenity
-			excitement
-			willpower
-			maxConfidence
-			maxConcentration
-			maxSatisfaction
-			maxSerenity
-			maxExcitement
-			maxWillpower
+			breakdown {
+				name
+				confidence
+				concentration
+				satisfaction
+				serenity
+				excitement
+				willpower
+			}
 		}
 		weight
 		height
@@ -63,7 +89,10 @@ mutation CreateStarter($name: String!, $species: Int, $speciesId: Int) {
 		gender
 		orientation
 		chemistry
-		bonusHints
+		bonusHintTips {
+			chipText
+			hoverText
+		}
 		isVivid
 		variant
 		outlook

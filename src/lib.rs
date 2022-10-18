@@ -114,6 +114,14 @@ pub struct CancelAuctionItem;
 )]
 #[cfg(feature="CancelTrade")]
 pub struct CancelTrade;
+
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/CancelTradeOffer.graphql"
+)]
+#[cfg(feature="CancelTradeOffer")]
+pub struct CancelTradeOffer;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
@@ -128,6 +136,13 @@ pub struct ClaimGigaMatter;
 )]
 #[cfg(feature="CreateAvatar")]
 pub struct CreateAvatar;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/CreatePetTeam.graphql"
+)]
+#[cfg(feature="CreatePetTeam")]
+pub struct CreatePetTeam;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
@@ -173,6 +188,13 @@ pub struct DeleteMe;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/DeletePetTeam.graphql"
+)]
+#[cfg(feature="DeletePetTeam")]
+pub struct DeletePetTeam;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
 	query_path = "src/queries/queries/DeleteTrophy.graphql"
 )]
 #[cfg(feature="DeleteTrophy")]
@@ -184,6 +206,13 @@ pub struct DeleteTrophy;
 )]
 #[cfg(feature="DescendCave")]
 pub struct DescendCave;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/DestroyTrinket.graphql"
+)]
+#[cfg(feature="DestroyTrinket")]
+pub struct DestroyTrinket;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
@@ -362,6 +391,13 @@ pub struct QuestInteraction;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/RenamePetTeam.graphql"
+)]
+#[cfg(feature="RenamePetTeam")]
+pub struct RenamePetTeam;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
 	query_path = "src/queries/queries/ReportUser.graphql"
 )]
 #[cfg(feature="ReportUser")]
@@ -523,10 +559,32 @@ pub struct UpdatePetItems;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/UpdatePetTrinkets.graphql"
+)]
+#[cfg(feature="UpdatePetTrinkets")]
+pub struct UpdatePetTrinkets;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
 	query_path = "src/queries/queries/UpdateRep.graphql"
 )]
 #[cfg(feature="UpdateRep")]
 pub struct UpdateRep;
+
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/UpdateUserBlock.graphql"
+)]
+#[cfg(feature="UpdateUserBlock")]
+pub struct UpdateUserBlock;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/UpgradeSocietyBadge.graphql"
+)]
+#[cfg(feature="UpgradeSocietyBadge")]
+pub struct UpgradeSocietyBadge;
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",
@@ -674,6 +732,14 @@ pub struct GetPetMoves;
 )]
 #[cfg(feature="GetPets")]
 pub struct GetPets;
+#[derive(GraphQLQuery)]
+#[graphql(
+	schema_path = "src/queries/schema.graphql",
+	query_path = "src/queries/queries/GetPetTeams.graphql"
+)]
+#[cfg(feature="GetPetTeams")]
+pub struct GetPetTeams;
+
 #[derive(GraphQLQuery)]
 #[graphql(
 	schema_path = "src/queries/schema.graphql",

@@ -15,6 +15,7 @@ mutation StartNpcBattle($npc: Int!, $variant: Int!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -67,6 +68,7 @@ mutation StartNpcBattle($npc: Int!, $variant: Int!) {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -121,6 +123,7 @@ mutation StartNpcBattle($npc: Int!, $variant: Int!) {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

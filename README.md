@@ -39,4 +39,4 @@ async fn perform_me2_query(variables: me2::Variables) -> Result<(), Box<dyn Erro
 ```
 
 ## Version
-Made for Voidpet version 0.19.0
+Made for Voidpet version 0.22.0

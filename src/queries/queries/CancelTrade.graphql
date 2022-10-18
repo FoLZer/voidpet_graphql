@@ -1,4 +1,4 @@
-mutation CancelTrade($tradeBoxId: Uuid!) {
+mutation CancelTrade($tradeBoxId: UUID!) {
 	cancelTrade(tradeBoxId: $tradeBoxId) {
 		user {
 			id
@@ -12,6 +12,7 @@ mutation CancelTrade($tradeBoxId: Uuid!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation CancelTrade($tradeBoxId: Uuid!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

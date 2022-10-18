@@ -1,4 +1,4 @@
-mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: Uuid!) {
+mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: UUID!) {
 	buyoutAuctionItem(amount: $amount, auctionItemId: $auctionItemId) {
 		user {
 			id
@@ -12,6 +12,7 @@ mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: Uuid!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation BuyoutAuctionItem($amount: Int!, $auctionItemId: Uuid!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

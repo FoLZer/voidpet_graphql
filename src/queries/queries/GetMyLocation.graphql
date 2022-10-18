@@ -22,6 +22,7 @@ query GetMyLocation {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus
@@ -226,6 +227,7 @@ query GetMyLocation {
 				bio
 				level
 				xp
+				envyCounter
 				xpCap
 				isBanned
 				giga
@@ -259,6 +261,9 @@ query GetMyLocation {
 				profileBgId
 				changeUsernameToken
 				linkAccess
+				numPetTeams
+				currPetTeamId
+				currPetTeamName
 				reputation {
 					faction
 					value
@@ -289,6 +294,7 @@ query GetMyLocation {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -341,6 +347,7 @@ query GetMyLocation {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -384,6 +391,7 @@ query GetMyLocation {
 				speciesId
 				level
 				source
+				nature
 				foodMeter
 				hpPercent
 				tmpCatchingStatus

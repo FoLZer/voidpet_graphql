@@ -20,6 +20,7 @@ mutation CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!,
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -53,6 +54,9 @@ mutation CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!,
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value
@@ -89,6 +93,7 @@ mutation CreateAvatar($hairColorId: Int!, $skinColorId: Int!, $eyeColorId: Int!,
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

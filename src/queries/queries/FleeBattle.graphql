@@ -22,6 +22,7 @@ mutation FleeBattle {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus
@@ -70,6 +71,7 @@ mutation FleeBattle {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -122,6 +124,7 @@ mutation FleeBattle {
 					isVivid
 					speciesId
 					level
+					nature
 					stage
 					name
 					frameSize
@@ -211,6 +214,7 @@ mutation FleeBattle {
 				originalMetAt
 				originalOwnerName
 				xp
+				nature
 				items {
 					id
 					name
@@ -228,6 +232,34 @@ mutation FleeBattle {
 					scale
 					duration
 				}
+				trinkets {
+					... on SimpleItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+					}
+					... on ColorItemField {
+						id
+						name
+						type
+						rarity
+						description
+						vendorCost
+						skill
+						frame
+						gigaCost
+						animId
+						colors
+					}
+					__typename
+				}
 				xpCap
 				generation
 				stats {
@@ -235,18 +267,15 @@ mutation FleeBattle {
 					moodBoostBattleStat
 					hp
 					totalHp
-					confidence
-					concentration
-					satisfaction
-					serenity
-					excitement
-					willpower
-					maxConfidence
-					maxConcentration
-					maxSatisfaction
-					maxSerenity
-					maxExcitement
-					maxWillpower
+					breakdown {
+						name
+						confidence
+						concentration
+						satisfaction
+						serenity
+						excitement
+						willpower
+					}
 				}
 				weight
 				height
@@ -254,7 +283,10 @@ mutation FleeBattle {
 				gender
 				orientation
 				chemistry
-				bonusHints
+				bonusHintTips {
+					chipText
+					hoverText
+				}
 				isVivid
 				variant
 				outlook
@@ -423,65 +455,6 @@ mutation FleeBattle {
 					startingProgressString
 					dailyStartedAt
 				}
-				user {
-					id
-					username
-					instagramUsername
-					twitterUsername
-					tiktokUsername
-					youtubeChannelUrl
-					merchPurchased
-					signupNumber
-					bio
-					level
-					xp
-					xpCap
-					isBanned
-					giga
-					hairColorId
-					hairColors
-					voidMatterColorId
-					voidMatterColors
-					skinColorId
-					skinColors
-					eyeColorId
-					eyeColors
-					voidMatter
-					gigaMatter
-					gigaMatterClaimedAt
-					friendTag
-					questProgress {
-						questId
-						progressString
-						percentComplete
-						complete
-					}
-					guildId
-					guildRole
-					hairId
-					faceId
-					torsoId
-					legsId
-					backAccessoryId
-					frontAccessoryId
-					displayName
-					profileBgId
-					changeUsernameToken
-					linkAccess
-					reputation {
-						faction
-						value
-					}
-					numPets
-					petLimit
-					discordAvatarUrl
-					links {
-						title
-						subtitle
-						icon
-						link
-					}
-				}
 			}
 			user {
 				id
@@ -495,6 +468,7 @@ mutation FleeBattle {
 				bio
 				level
 				xp
+				envyCounter
 				xpCap
 				isBanned
 				giga
@@ -528,6 +502,9 @@ mutation FleeBattle {
 				profileBgId
 				changeUsernameToken
 				linkAccess
+				numPetTeams
+				currPetTeamId
+				currPetTeamName
 				reputation {
 					faction
 					value
@@ -564,6 +541,7 @@ mutation FleeBattle {
 						speciesId
 						level
 						source
+						nature
 						foodMeter
 						hpPercent
 						tmpCatchingStatus

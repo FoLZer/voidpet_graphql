@@ -1,4 +1,4 @@
-mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [Uuid!]!, $voidMatter: Int, $tradeLength: Int!) {
+mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: [Int!]!, $petIds: [UUID!]!, $voidMatter: Int, $tradeLength: Int!) {
 	createTrade(
 		description: $description
 		itemIds: $itemIds
@@ -19,6 +19,7 @@ mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: 
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -52,6 +53,9 @@ mutation CreateTrade($description: String!, $itemIds: [Int!]!, $itemQuantities: 
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

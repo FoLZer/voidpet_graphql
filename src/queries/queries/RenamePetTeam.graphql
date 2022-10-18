@@ -1,0 +1,12 @@
+mutation RenamePetTeam($id: UUID!, $name: String!) {
+  RenamePetTeam(id: $id, name: $name) {
+    user {
+      id
+      currPetTeamName
+    }
+    petTeam {
+      id
+      name
+    }
+  }
+}

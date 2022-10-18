@@ -1,4 +1,4 @@
-query GetTradeOffers($cursor: Int, $tradeBoxId: Uuid) {
+query GetTradeOffers($cursor: Int, $tradeBoxId: UUID) {
 	getTradeOffers(cursor: $cursor, tradeBoxId: $tradeBoxId) {
 		tradeOffers {
 			voidMatter

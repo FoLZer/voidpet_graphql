@@ -1,4 +1,4 @@
-mutation DeleteTrophy($id: Uuid!) {
+mutation DeleteTrophy($id: UUID!) {
 	deleteTrophy(id: $id) {
 		ok
 	}

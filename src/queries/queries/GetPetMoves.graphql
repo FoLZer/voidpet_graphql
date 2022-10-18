@@ -1,4 +1,4 @@
-query GetPetMoves($petId: Uuid!) {
+query GetPetMoves($petId: UUID!) {
 	getPetMoves(petId: $petId) {
 		moves {
 			item {

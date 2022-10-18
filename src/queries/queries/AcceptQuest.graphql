@@ -175,6 +175,7 @@ mutation AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: I
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -208,6 +209,9 @@ mutation AcceptQuest($questId: Int!, $itemId: Int, $name: String, $difficulty: I
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value

@@ -1,4 +1,4 @@
-mutation UpdateRep($input: [String!]!) {
+mutation UpdateRep($input: [RepChangeInput!]!) {
 	updateRep(input: $input) {
 		id
 		username
@@ -11,6 +11,7 @@ mutation UpdateRep($input: [String!]!) {
 		bio
 		level
 		xp
+		envyCounter
 		xpCap
 		isBanned
 		giga
@@ -44,6 +45,9 @@ mutation UpdateRep($input: [String!]!) {
 		profileBgId
 		changeUsernameToken
 		linkAccess
+		numPetTeams
+		currPetTeamId
+		currPetTeamName
 		reputation {
 			faction
 			value

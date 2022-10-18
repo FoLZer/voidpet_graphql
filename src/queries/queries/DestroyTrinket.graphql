@@ -1,13 +1,6 @@
-query GetPets($cursor: Int, $secondaryElement: Int, $species: Int, $vivid: Int, $sort: Int, $asc: Boolean) {
-	getPets(
-		cursor: $cursor
-		secondaryElement: $secondaryElement
-		species: $species
-		vivid: $vivid
-		sort: $sort
-		asc: $asc
-	) {
-		pets {
+mutation DestroyTrinket($id: UUID!) {
+	destroyTrinket(id: $id) {
+		pet {
 			id
 			name
 			level
@@ -110,6 +103,5 @@ query GetPets($cursor: Int, $secondaryElement: Int, $species: Int, $vivid: Int, 
 			moodIcon
 			mood
 		}
-		nextCursor
 	}
 }

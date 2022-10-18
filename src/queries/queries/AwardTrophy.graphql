@@ -1,4 +1,4 @@
-mutation AwardTrophy($username: String!, $trophyId: Uuid!, $trophyTitle: String!) {
+mutation AwardTrophy($username: String!, $trophyId: UUID!, $trophyTitle: String!) {
 	awardTrophy(username: $username, trophyId: $trophyId, trophyTitle: $trophyTitle) {
 		ok
 	}

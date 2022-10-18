@@ -1,4 +1,4 @@
-mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
+mutation PlayWithPet($id: UUID!, $activity: Int, $itemId: Int) {
 	playWithPet(id: $id, activity: $activity, itemId: $itemId) {
 		pet {
 			id
@@ -21,6 +21,7 @@ mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
 			originalMetAt
 			originalOwnerName
 			xp
+			nature
 			items {
 				id
 				name
@@ -38,6 +39,34 @@ mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
 				scale
 				duration
 			}
+			trinkets {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
 			xpCap
 			generation
 			stats {
@@ -45,18 +74,15 @@ mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
 				moodBoostBattleStat
 				hp
 				totalHp
-				confidence
-				concentration
-				satisfaction
-				serenity
-				excitement
-				willpower
-				maxConfidence
-				maxConcentration
-				maxSatisfaction
-				maxSerenity
-				maxExcitement
-				maxWillpower
+				breakdown {
+					name
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+				}
 			}
 			weight
 			height
@@ -64,7 +90,10 @@ mutation PlayWithPet($id: Uuid!, $activity: Int, $itemId: Int) {
 			gender
 			orientation
 			chemistry
-			bonusHints
+			bonusHintTips {
+				chipText
+				hoverText
+			}
 			isVivid
 			variant
 			outlook

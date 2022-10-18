@@ -1,4 +1,4 @@
-mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: Uuid!) {
+mutation ReportUser($description: String!, $type: Int!, $badUsername: Boolean!, $targetId: UUID!) {
 	reportUser(
 		description: $description
 		type: $type

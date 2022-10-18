@@ -22,6 +22,7 @@ mutation DescendCave {
 					speciesId
 					level
 					source
+					nature
 					foodMeter
 					hpPercent
 					tmpCatchingStatus

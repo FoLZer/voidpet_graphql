@@ -1,5 +1,72 @@
-mutation UpdateMainPets($mainPetIds: [String!]!) {
-	updateMainPets(mainPetIds: $mainPetIds) {
+mutation UpdateMainPets($petTeamName: String, $petTeamId: UUID, $mainPetIds: [String!]!) {
+	updateMainPets(
+		petTeamName: $petTeamName
+		petTeamId: $petTeamId
+		mainPetIds: $mainPetIds
+	) {
+		user {
+			id
+			username
+			instagramUsername
+			twitterUsername
+			tiktokUsername
+			youtubeChannelUrl
+			merchPurchased
+			signupNumber
+			bio
+			level
+			xp
+			envyCounter
+			xpCap
+			isBanned
+			giga
+			hairColorId
+			hairColors
+			voidMatterColorId
+			voidMatterColors
+			skinColorId
+			skinColors
+			eyeColorId
+			eyeColors
+			voidMatter
+			gigaMatter
+			gigaMatterClaimedAt
+			friendTag
+			questProgress {
+				questId
+				progressString
+				percentComplete
+				complete
+			}
+			guildId
+			guildRole
+			hairId
+			faceId
+			torsoId
+			legsId
+			backAccessoryId
+			frontAccessoryId
+			displayName
+			profileBgId
+			changeUsernameToken
+			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
+			reputation {
+				faction
+				value
+			}
+			numPets
+			petLimit
+			discordAvatarUrl
+			links {
+				title
+				subtitle
+				icon
+				link
+			}
+		}
 		mainPets {
 			id
 			name
@@ -21,6 +88,7 @@ mutation UpdateMainPets($mainPetIds: [String!]!) {
 			originalMetAt
 			originalOwnerName
 			xp
+			nature
 			items {
 				id
 				name
@@ -38,6 +106,34 @@ mutation UpdateMainPets($mainPetIds: [String!]!) {
 				scale
 				duration
 			}
+			trinkets {
+				... on SimpleItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+				}
+				... on ColorItemField {
+					id
+					name
+					type
+					rarity
+					description
+					vendorCost
+					skill
+					frame
+					gigaCost
+					animId
+					colors
+				}
+				__typename
+			}
 			xpCap
 			generation
 			stats {
@@ -45,18 +141,15 @@ mutation UpdateMainPets($mainPetIds: [String!]!) {
 				moodBoostBattleStat
 				hp
 				totalHp
-				confidence
-				concentration
-				satisfaction
-				serenity
-				excitement
-				willpower
-				maxConfidence
-				maxConcentration
-				maxSatisfaction
-				maxSerenity
-				maxExcitement
-				maxWillpower
+				breakdown {
+					name
+					confidence
+					concentration
+					satisfaction
+					serenity
+					excitement
+					willpower
+				}
 			}
 			weight
 			height
@@ -64,7 +157,10 @@ mutation UpdateMainPets($mainPetIds: [String!]!) {
 			gender
 			orientation
 			chemistry
-			bonusHints
+			bonusHintTips {
+				chipText
+				hoverText
+			}
 			isVivid
 			variant
 			outlook

@@ -20,16 +20,20 @@ type Mutation {
 	buyoutAuctionItem(amount: Int!, auctionItemId: Uuid!): BuyoutAuctionItemResponse
 	cancelAuctionItem(auctionItemId: Uuid!): CancelAuctionItemResponse
 	cancelTrade(tradeBoxId: Uuid!): CancelTradeResponse
+	cancelTradeOffer(tradeBoxId: UUID!): CancelTradeResponse
 	claimGigaMatter: ClaimGigaMatterResponse
 	createAvatar(hairColorId: Int!, skinColorId: Int!, eyeColorId: Int!, hairId: Int, faceId: Int!, torsoId: Int!, legsId: Int!): CreateAvatarResponse
+	createPetTeam(name: String!, petIds: [UUID!]!): CreatePetTeamResponse
 	createStarter(name: String!, species: Int, speciesId: Int): Pet
 	createTrade(description: String!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [Uuid!]!, voidMatter: Int, tradeLength: Int!): CreateTradeResponse
 	createTradeOffer(tradeBoxId: Uuid!, itemIds: [Int!]!, itemQuantities: [Int!]!, petIds: [Uuid!]!, voidMatter: Int): CreateTradeOfferResponse
 	createTrophy(title: String!, description: String!, base: Int!, speciesId: Int, stage: Int, itemId: Int): OkResponse
 	deleteGuild: DeleteGuildResponse
 	deleteMe: OkResponse
+	deletePetTeam(id: UUID!): DeletePetTeamResponse
 	deleteTrophy(id: Uuid!): OkResponse
 	descendCave: LocationResponse
+	destroyTrinket(id: UUID!): DestroyTrinketResponse
 	devRandomItem: OkResponse
 	devSavePetItemPos(type: Int!, speciesId: Int!, stage: Int!, x: [String!]!, y: [String!]!, rotate: [Int!]!, scale: [Float!]!, mass: Int, stiffness: Int, damping: Int, bounce: Int, duration: Float): [ItemField!]
 	drinkPotion(itemId: Int!, petIds: [Uuid!]!): DrinkPotionResponse
@@ -55,6 +59,7 @@ type Mutation {
 	pickUpQuestItem(itemId: Int!): PickUpQuestItemResponse
 	playWithPet(id: Uuid!, activity: Int, itemId: Int): PetPlayResponse
 	questInteraction(questId: Int!): QuestInteractionResponse
+	RenamePetTeam(id: UUID!, name: String!): RenamePetTeamResponse
 	reportUser(description: String!, type: Int!, badUsername: Boolean!, targetId: Uuid!): OkResponse
 	savePetMoves(petId: Uuid!, newMoves: [String!]!, moves: [String!]!): SavePetMovesResponse
 	scareAwayPet(wildPetId: Uuid!): ScareAwayPetResponse
@@ -78,7 +83,10 @@ type Mutation {
 	updateMyLocation(newLocationId: Int, direction: Int): LocationResponse
 	updatePet(id: Uuid!, data: String!): Pet
 	updatePetItems(petId: String!, headItemId: Int, neckItemId: Int): UpdatePetItemsResponse
+	updatePetTrinkets(id: UUID!, data: PetTrinketsInput!): UpdatePetTrinketsResponse
 	updateRep(input: [String!]!): User
+	updateUserBlock(targetId: UUID!, block: Boolean!): OkResponse
+	upgradeSocietyBadge: UpgradeSocietyBadgeResponse
 	usernameChangeCheckoutLink: UsernameChangeCheckoutLinkResponse
 }
 
@@ -103,6 +111,7 @@ type Query {
 	getPetLog(speciesId: Int!): GetPetLogResponse
 	getPetMoves(petId: Uuid!): GetPetMovesResponse
 	getPets(cursor: Int, secondaryElement: Int, species: Int, vivid: Int, sort: Int, asc: Boolean): GetPetsResponse
+	getPetTeams(cursor: Int): GetPetTeamsResponse
 	getStarterAvatarItems: GetStarterAvatarItemsResponse
 	getTradeBoxes(cursor: Int, itemType: Int, itemId: Int, stage: Int, speciesId: Int, vivid: Int, username: String, minLevel: Int, mine: Boolean): GetTradeBoxesResponse
 	getTradeOffers(cursor: Int, tradeBoxId: Uuid): GetTradeOffersResponse
@@ -187,6 +196,7 @@ type BattlePetField {
 	items: [PetItemDisplayField!]!
 	level: Int!
 	name: String!
+	nature: Int!
 	satisfactionChange: Int!
 	serenityChange: Int!
 	source: String!
@@ -225,7 +235,7 @@ type BattleSummaryInfo {
 	items: [InventoryItem!]!
 	location: LocationField!
 	pets: [Pet!]!
-	questData: QuestLogResponse
+	questData: SummaryQuestLogResponse
 	questProgressStrings: [String!]!
 	user: User
 	voidMatter: Int!
@@ -265,6 +275,7 @@ type WildPet {
 	items: [PetItemDisplayField!]!
 	level: Int!
 	name: String!
+	nature: Int!
 	secondaryElement: Int
 	source: String!
 	speciesId: Int!
@@ -338,6 +349,7 @@ type Encounter {
 	facedCount: Int!
 	speciesId: Int!
 	stage: Int!
+	tradedCount: Int!
 	variant: Int!
 }
 
@@ -401,12 +413,6 @@ type MoveAndItemField {
 	quantity: Int!
 }
 
-type LinkClick {
-	count: Int!
-	date: String!
-	link: String!
-}
-
 type SetStateDisplayField {
 	state: BattleStateField!
 }
@@ -442,16 +448,14 @@ type OkResponse {
 }
 
 type Pet {
-	adrenaline: Int
 	birthday: String!
 	bondPoints: Int!
-	bonusHints: [String!]!
+	bonusHintTips: [HintTip!]!
 	changeNameToken: Int!
 	chemistry: Int!
 	containerId: Int
 	dopamine: Int!
 	dopamineDt: String
-	endorphins: Int
 	favorite: Boolean
 	frameSize: String!
 	gender: Int!
@@ -467,7 +471,7 @@ type Pet {
 	mood: String!
 	moodIcon: String!
 	name: String!
-	noradrenaline: Int
+	nature: String!
 	orientation: Int!
 	originalMetAt: String
 	originalOwnerName: String
@@ -476,32 +480,31 @@ type Pet {
 	oxytocin: Int!
 	oxytocinDt: String
 	preference: String!
-	serotonin: Int
 	speciesId: Int!
 	stage: Int!
 	stats: Stats!
 	theTotal: Int!
+	trinkets: [ItemField!]!
 	variant: Int!
 	weight: Int!
 	xp: Int!
 	xpCap: Int!
 }
 
-type Stats {
+type StatBreakdown {
 	concentration: Int!
 	confidence: Int!
 	excitement: Int!
-	hp: Int!
-	maxConcentration: Int!
-	maxConfidence: Int!
-	maxExcitement: Int!
-	maxSatisfaction: Int!
-	maxSerenity: Int!
-	maxWillpower: Int!
-	moodBoostBattleStat: String
-	moodHint: String
+	name: String!
 	satisfaction: Int!
 	serenity: Int!
+	willpower: Int!
+}
+
+type Stats {
+	breakdown: [StatBreakdown!]!
+	hp: Int!
+	moodBoostBattleStat: String
 	totalHp: Int!
 	willpower: Int!
 }
@@ -510,8 +513,11 @@ type User {
 	backAccessoryId: Int
 	bio: String
 	changeUsernameToken: Int!
+	currPetTeamId: Int
+	currPetTeamName: String
 	discordAvatarUrl: String
 	displayName: String
+	envyCounter: Int
 	eyeColorId: Int
 	eyeColors: [String!]
 	faceId: Int
@@ -533,6 +539,7 @@ type User {
 	linkAccess: Boolean
 	links: [ProfileLink!]
 	merchPurchased: String
+	numPetTeams: Int!
 	numPets: Int!
 	petLimit: Int!
 	profileBgId: Int
@@ -563,7 +570,7 @@ type ProfileLink {
 type QuestProgressField {
 	complete: Boolean
 	percentComplete: Int
-	progressString: String
+	progressString: String!
 	questId: Int!
 }
 
@@ -574,6 +581,7 @@ type RepField {
 
 type Trophy {
 	base: Int!
+	colorId: Int
 	description: String!
 	id: String!
 	item: ItemField
@@ -677,7 +685,16 @@ type Notif {
 	type: Int!
 }
 
+type PetTeam {
+	id: String!
+	name: String!
+	pets: [Pet!]!
+}
 
+type HintTip {
+	chipText: String!
+	hoverText: String!
+}
 
 
 
@@ -720,6 +737,10 @@ type CancelAuctionItemResponse {
 	inventoryItem: InventoryItem!
 	user: User!
 }
+type CreatePetTeamResponse {
+	petTeam: PetTeam!
+	user: User!
+}
 type CancelTradeResponse {
 	inventoryChanges: [InventoryItem!]!
 	user: User!
@@ -743,6 +764,12 @@ type CreateTradeOfferResponse {
 }
 type DeleteGuildResponse {
 	user: User!
+}
+type DeletePetTeamResponse {
+	user: User!
+}
+type DestroyTrinketResponse {
+	pet: Pet!
 }
 type DrinkPotionResponse {
 	inventoryChanges: [InventoryItem!]!
@@ -807,6 +834,10 @@ type QuestInteractionResponse {
 	quests: [QuestField!]!
 	user: User!
 }
+type RenamePetTeamResponse {
+	petTeam: PetTeam!
+	user: User
+}
 type SavePetMovesResponse {
 	inventoryChanges: [InventoryItem!]!
 	moves: [MoveAndItemField!]!
@@ -868,6 +899,14 @@ type UpdatePetItemsResponse {
 	pet: Pet!
 	user: User
 }
+type UpdatePetTrinketsResponse {
+	inventoryChanges: [InventoryItem!]!
+	pet: Pet!
+	user: User
+}
+type UpgradeSocietyBadgeResponse {
+	user: User!
+}
 type UsernameChangeCheckoutLinkResponse {
 	link: String!
 }
@@ -919,6 +958,10 @@ type GetPetMovesResponse {
 type GetPetsResponse {
 	nextCursor: Int
 	pets: [Pet!]!
+}
+type GetPetTeamsResponse {
+	nextCursor: Int
+	petTeams: [PetTeam!]!
 }
 type GetStarterAvatarItemsResponse {
 	starterItems: [ItemField!]!

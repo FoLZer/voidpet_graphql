@@ -39,6 +39,5 @@ mutation DevSavePetItemPos($type: Int!, $speciesId: Int!, $stage: Int!, $x: [Str
 			colors
 		}
 		__typename
-		__typename
 	}
 }

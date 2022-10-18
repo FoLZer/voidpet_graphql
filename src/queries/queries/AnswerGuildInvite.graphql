@@ -1,4 +1,4 @@
-mutation AnswerGuildInvite($guildId: Uuid!, $accept: Boolean!) {
+mutation AnswerGuildInvite($guildId: UUID!, $accept: Boolean!) {
 	answerGuildInvite(guildId: $guildId, accept: $accept) {
 		user {
 			id
@@ -12,6 +12,7 @@ mutation AnswerGuildInvite($guildId: Uuid!, $accept: Boolean!) {
 			bio
 			level
 			xp
+			envyCounter
 			xpCap
 			isBanned
 			giga
@@ -45,6 +46,9 @@ mutation AnswerGuildInvite($guildId: Uuid!, $accept: Boolean!) {
 			profileBgId
 			changeUsernameToken
 			linkAccess
+			numPetTeams
+			currPetTeamId
+			currPetTeamName
 			reputation {
 				faction
 				value
