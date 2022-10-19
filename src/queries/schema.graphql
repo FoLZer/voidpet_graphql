@@ -588,7 +588,7 @@ type RepField {
 
 type Trophy {
 	base: Int!
-	colorId: Int
+	colorId: String
 	description: String!
 	id: String!
 	item: ItemField
