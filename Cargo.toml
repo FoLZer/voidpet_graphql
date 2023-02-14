@@ -1,14 +1,14 @@
 [package]
 name = "voidpet_graphql"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["FoLZer"]
 
 
 [dependencies]
-uuid = { version = "1.1.2", features = ["serde"] }
+uuid = { version = "*", features = ["serde"] }
 serde = "^1.0"
-graphql_client = "0.11.0"
+graphql_client = "*"
 
 [features]
 AcceptQuest = []
